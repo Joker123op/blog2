@@ -14,7 +14,7 @@ module.exports = {
             {
                 title: '欢迎学习',
                 path: '/',
-                collapsable: false, // 是否折叠
+                collapsable: true, // 是否折叠
                 children: [
                     { title: "博客介绍", path: "/" }
                 ]
