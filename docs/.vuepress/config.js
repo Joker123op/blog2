@@ -6,7 +6,7 @@ module.exports = {
             {
                 text: 'Ling blog',
                 items: [
-                    { text: 'Github', link: 'https://github.com/adrian803' },
+                    { text: 'Github', link: 'https://github.com/Joker123op/blog2.git' },
                 ]
             }
         ],
@@ -26,9 +26,9 @@ module.exports = {
               path: '/handbook/3',
               collapsable: false, // 是否折叠
               children: [
-                { title: "博客搭建", path: "/handbook/1" },
-                { title: "博客搭建", path: "/handbook/2" },
-                { title: "博客搭建", path: "/handbook/3" }
+                { title: "博客搭建", path: "/handbook/1" }
+                // { title: "博客搭建", path: "/handbook/2" },
+                // { title: "博客搭建", path: "/handbook/3" }
               ],
             }
           ]
