@@ -14,7 +14,7 @@ module.exports = {
             {
                 title: '欢迎学习',
                 path: '/',
-                collapsable: flase, // 是否折叠
+                collapsable: false, // 是否折叠
                 children: [
                     { title: "博客介绍", path: "/" }
                 ]
@@ -26,24 +26,8 @@ module.exports = {
               path: '/handbook/1',
               collapsable: true, // 是否折叠
               children: [
-                { title: "Python笔记", path: "/handbook/1" }    
-                // { title: "CTF:攻防世界", path: "/handbook/2" } 
-              ],
-            //   title:"CTF Wp:",
-            //   path: '/handbook/2',
-            //   collapsable: true, // 是否折叠
-            //   children: [
-            //     { title: "CTF:攻防世界", path: "/handbook/2" }    
-            //     // { title: "CTF:攻防世界", path: "/handbook/2" } 
-            //   ],
-            },
-            {
-                title:"CTF Wp:",
-              path: '/handbook/2',
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "CTF:攻防世界", path: "/handbook/2" }    
-                // { title: "CTF:攻防世界", path: "/handbook/2" } 
+                { title: "Python笔记", path: "/handbook/1" },    
+                { title: "CTF:攻防世界", path: "/handbook/2" } 
               ],
             }
           ]
