@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/blog2/', // 这个路径名称就是你刚才所配置的项目名！！！，斜杠不能漏！！！
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
