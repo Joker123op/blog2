@@ -2,7 +2,7 @@
 home: true
 heroText: JOKER个人博客
 tagline: 一个基于 VuePress 的个人博客
-actionText: 进入 →
+actionText: Welcome →
 actionLink: /handbook/1/
 features:
 - title: 简洁至上
