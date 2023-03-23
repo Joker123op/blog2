@@ -1,31 +1,16 @@
-# Python笔记
-## Format用法
-1、
-```Python
-print('{name}在{option}'.format(name=" "，option=" "))
-```
-这种办法可以将花括号的内容替换成相应变量字符串的值
-2、通过位置
-```Python
-print('{}在{}'.format('陈治轩','拉屎'))
-结果是：陈治轩在拉屎
-```
-3、在python3.6后的版本中format的用法可以简化例如：
-在字符串中使用变量
-```Python
-name = "陈治轩"
-do = "是男同"
-czx = f"{name}{do}"
-print(czx)
-结果是：陈治轩是男同
-```
-甚至还可以这样：
-```python
-name = "陈治轩"
-do = "是傻逼"
-czx = f"{name}{do}"
-print(f"厦软的{czx}")
-结果是：厦软的陈治轩是傻逼
-```
-# 打火机我i的环境
-伟大伟大伟大爱玩打完哇阿迪王打完大王的阿瓦达
+---
+home: true
+heroText: 林息の个人博客
+tagline: 一个基于 VuePress 的个人博客
+actionText: 如何搭建 →
+actionLink: /handbook/1/
+features:
+- title: 简洁至上
+  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+- title: Vue 驱动
+  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+- title: 高性能
+  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+footer: MIT Licensed | Copyright © 2023-present Evan You
+
+---
