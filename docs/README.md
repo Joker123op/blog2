@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Ling个人博客
+heroText: JOKER个人博客
 tagline: 一个基于 VuePress 的个人博客
 actionText: 进入 →
 actionLink: /handbook/1/
