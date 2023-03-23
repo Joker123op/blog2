@@ -29,7 +29,16 @@ module.exports = {
                 { title: "Python笔记", path: "/handbook/1" }    
                 // { title: "CTF:攻防世界", path: "/handbook/2" } 
               ],
-              title:"CTF Wp:",
+            //   title:"CTF Wp:",
+            //   path: '/handbook/2',
+            //   collapsable: true, // 是否折叠
+            //   children: [
+            //     { title: "CTF:攻防世界", path: "/handbook/2" }    
+            //     // { title: "CTF:攻防世界", path: "/handbook/2" } 
+            //   ],
+            },
+            {
+                title:"CTF Wp:",
               path: '/handbook/2',
               collapsable: true, // 是否折叠
               children: [
