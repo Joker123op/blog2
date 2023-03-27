@@ -27,7 +27,7 @@ module.exports = {
               collapsable: true, // 是否折叠
               children: [
                 { title: "Python笔记", path: "/handbook/1" },    
-                { title: "CTF:攻防世界", path: "/handbook/2" } 
+                { title: "现代密码学", path: "/handbook/2" } 
               ],
             }
           ]
