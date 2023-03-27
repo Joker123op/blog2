@@ -35,12 +35,12 @@ module.exports = {
             {
                 //   title: "基础学习",
                 //   path: '/handbook/1',
-                  title:"Python基础",
-                  path: '/handbook/1',
+                  title:"CTF题解",
+                  path: '/handbook/3',
                   collapsable: true, // 是否折叠
                   children: [
-                    { title: "Python笔记", path: "/handbook/1" },    
-                    { title: "现代密码学", path: "/handbook/2" } 
+                    { title: "攻防世界", path: "/handbook/3" }    
+                    // { title: "现代密码学", path: "/handbook/2" }
                   ],
                 }
           ]
