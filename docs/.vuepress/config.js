@@ -31,7 +31,18 @@ module.exports = {
                 { title: "Python笔记", path: "/handbook/1" },    
                 { title: "现代密码学", path: "/handbook/2" } 
               ],
-            }
+            },
+            {
+                //   title: "基础学习",
+                //   path: '/handbook/1',
+                  title:"Python基础",
+                  path: '/handbook/1',
+                  collapsable: true, // 是否折叠
+                  children: [
+                    { title: "Python笔记", path: "/handbook/1" },    
+                    { title: "现代密码学", path: "/handbook/2" } 
+                  ],
+                }
           ]
     }
 }
