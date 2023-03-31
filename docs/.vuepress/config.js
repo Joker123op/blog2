@@ -35,11 +35,11 @@ module.exports = {
             {
                 //   title: "基础学习",
                 //   path: '/handbook/1',
-                  title:"CTF题解",
+                  title:"逆向",
                   path: '/handbook/3',
                   collapsable: true, // 是否折叠
                   children: [
-                    { title: "攻防世界", path: "/handbook/3" }    
+                    { title: "C/C++", path: "/handbook/3" }    
                     // { title: "现代密码学", path: "/handbook/2" }
                   ],
                 }
