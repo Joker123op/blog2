@@ -22,10 +22,9 @@ module.exports = {
                 ]
             },
             {
-            //   title: "基础学习",
-            //   path: '/handbook/1',
               title:"Python基础",
               path: '/handbook/1',
+              title:"Python3基础",
               collapsable: true, // 是否折叠
               children: [
                 { title: "Python笔记", path: "/handbook/1" },    
@@ -33,14 +32,11 @@ module.exports = {
               ],
             },
             {
-                //   title: "基础学习",
-                //   path: '/handbook/1',
                   title:"逆向",
                   path: '/handbook/3',
                   collapsable: true, // 是否折叠
                   children: [
                     { title: "C/C++", path: "/handbook/3" }    
-                    // { title: "现代密码学", path: "/handbook/2" }
                   ],
                 }
           ]
