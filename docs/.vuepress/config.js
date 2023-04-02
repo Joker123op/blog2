@@ -23,22 +23,34 @@ module.exports = {
             },
             {
               title:"Python基础",
-              path: '/handbook/1',
+              path: '/handbook/Python notes',
               title:"Python3基础",
               collapsable: true, // 是否折叠
               children: [
-                { title: "Python笔记", path: "/handbook/1" },    
-                { title: "密码学", path: "/handbook/2" } 
+                { title: "Python笔记", path: "/handbook/Python notes" },    
+                { title: "密码学", path: "/handbook/Cryptography" } 
               ],
             },
             {
-                  title:"逆向",
-                  path: '/handbook/3',
-                  collapsable: true, // 是否折叠
-                  children: [
-                    { title: "C/C++", path: "/handbook/3" }    
-                  ],
-                }
+              title:"逆向",
+              path: '/handbook/Reverse',
+              collapsable: true, // 是否折叠
+              children: [
+                { title: "C/C++", path: "/handbook/Reverse" }    
+              ],
+            },
+            {
+              title:"CTF:Wp",
+              path: '/handbook/Picture steganography',
+              collapsable: true, // 是否折叠
+              children: [
+                { title: "图片隐写", path: "/handbook/Picture steganography" },
+                { title: "流量分析", path: "/handbook/Flow analysis" },
+                { title: "Web", path: "/handbook/Web" },
+                // { title: "图片隐写", path: "/handbook/Modern cryptography" },
+                { title: "现代密码学", path: "/handbook/Modern cryptography" }        
+              ],
+            }
           ]
     }
 }
