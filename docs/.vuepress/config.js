@@ -32,15 +32,7 @@ module.exports = {
               ],
             },
             {
-              title:"逆向",
-              path: '/handbook/Reverse',
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "C/C++", path: "/handbook/Reverse" }    
-              ],
-            },
-            {
-              title:"CTF:Wp",
+              title:"CTF:wp",
               path: '/handbook/Picture steganography',
               collapsable: true, // 是否折叠
               children: [
@@ -49,6 +41,14 @@ module.exports = {
                 { title: "Web", path: "/handbook/Web" },
                 // { title: "图片隐写", path: "/handbook/Modern cryptography" },
                 { title: "现代密码学", path: "/handbook/Modern cryptography" }        
+              ],
+            },
+            {
+              title:"逆向",
+              path: '/handbook/Reverse',
+              collapsable: true, // 是否折叠
+              children: [
+                { title: "C/C++", path: "/handbook/Reverse" }    
               ],
             }
           ]
