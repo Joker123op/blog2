@@ -187,3 +187,30 @@ printf("%08x", arr[1]);
 在蓝色区域内可以看到已经成功的存入了。
 
 `_int64`这个是非标准的long int类型，只有在微软的环境下才可以使用，在其他环境下依旧以c标准为主。
+
+## scanf的修饰
+
+在默认情况下有这么一个案例：
+
+```C
+char szBuf[20] = {0};
+printf("%08x\r\n", szBuf);
+scanf("%s", szBuf);
+printf(szBuf);
+```
+在这个框架下数组`szBuf[20]`的地址是这个部分
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304032029074.webp)
+
+当在程序的scanf中输入Hello Wolrd然后可以在内存中看到只有Hello进来了，World没有。
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304032030551.webp)
+
+原因是`scanf`在%s的情况下遇见空格和回车是截断符。
+
+因此可以加上这样的修饰：`scanf("%[0-9]s", szBuf);`按照这个格式输入可以得到以下示例：
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304032035734.webp)
+
+可以看到除了0-9以外的所有字符都没有存进内存当中。
+
