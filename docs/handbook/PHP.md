@@ -32,6 +32,8 @@ web容器可以把前端和动态语言放在一起，它是一个十分重要�
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304050114463.webp)
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304050122519.webp)
+
 
 ## PHP语言的特点以及介绍
 
