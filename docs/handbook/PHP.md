@@ -24,6 +24,15 @@ web容器可以把前端和动态语言放在一起，它是一个十分重要�
 
 端口号不能重复，然后在根目录中的路径中要删除(.com）。
 
+随后将PHP的文件放在这个目录下
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304050113364.webp)
+
+在里面写好php之后保存跟着这个步骤打开就可以完成php环境的搭建啦！
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304050114463.webp)
+
+
 ## PHP语言的特点以及介绍
 
 首先PHP是一种通用的开源脚本语言。（超文本预处理器）
