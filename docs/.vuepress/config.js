@@ -50,6 +50,15 @@ module.exports = {
               children: [
                 { title: "C/C++", path: "/handbook/Reverse" }    
               ],
+            },
+            {
+              title:"渗透",
+              path: '/handbook/MySQL',
+              collapsable: true, // 是否折叠
+              children: [
+                { title: "数据库", path: "/handbook/MySQL" },
+                { title: "PHP", path: "/handbook/PHP" }  
+              ],
             }
           ]
     }
