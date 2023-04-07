@@ -57,7 +57,8 @@ module.exports = {
             collapsable: true, // 是否折叠
             children: [
               { title: "数据库", path: "/handbook/sql" },
-              { title: "PHP", path: "/handbook/1" }  
+              { title: "PHP", path: "/handbook/1" },
+              { title: "sql注入", path: "/handbook/7" }   
             ],
           }
         ]
