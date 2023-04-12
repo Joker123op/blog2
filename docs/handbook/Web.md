@@ -56,18 +56,65 @@
 
 成功得到flag！
 
+## 攻防世界:Training-WWW-Robots
 
+打开靶场后是一串英文，翻译过来是
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304122302848.webp)
 
+>这个考点是网络爬虫的`Robots`协议[网络爬虫排除标准](https://zhuanlan.zhihu.com/p/342575122)
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304122305984.webp)
 
+所以接下来就在网址栏访问这个文件就行了，这个文件上就给了页面，上面就告诉了什么可以爬
 
+我们就输入这个目录就可以获得flag
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304122308963.webp)
 
+## 攻防世界：PHP2
 
+打开靶场后是这样的
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304122311467.webp)
 
+意思是你可以对这个网站进行反驳吗？
 
+这里引入一篇文章[index.phps](https://blog.csdn.net/loseheart157/article/details/108140659)
+
+那如果是打开网站首页那肯定是想到`/index.php`这里我尝试了输入这个路径，结果页面没有任何的变化
+
+那就输入`/index.phps`试试。
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304122313189.webp)
+
+果然有了回显，这就是他网站的源码.
+
+接下来就是代码审计环节
+
+他的第一个判断是id的值不能等于admin
+
+但是他又要等于admin才能得到flag
+
+不过注意这有一个特殊的函数`urldecode()`他的[作用](https://www.w3cschool.cn/php/php-urldecode.html)是将id的参数用url解码。
+
+所以我们传递进去id的值一定是url编码后的。
+
+不过Web浏览器的url栏会对输入的url编码自动解码一次。因为在php中有一个函数会将获取到的值再url解码一次才会进入判断。
+
+所以我们输入的id的值要是编码两次后的值
+
+不过我发现网上搜到的url在线编码工具都不怎么好用，所以我个人用的是线下的名字叫`CaptfEncoder`
+
+右边的值就是将admin编码两次后的结果：
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130032608.webp)
+
+>%2561%2564%256d%2569%256e
+
+然后把这段数据放进url中`/index.php?id=%2561%2564%256d%2569%256e`就行了。
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130034894.webp)
 
 
 
