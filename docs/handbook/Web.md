@@ -132,7 +132,8 @@
 
 <br >
 
-![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130907113.webp)
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304131218058.webp)
+
 
 仔细分析一下会发现这串是js源码，而且似乎没有什么跳转的页面，也就是说，无论我们输入什么都只会在这个页面。
 
