@@ -177,17 +177,43 @@ for i in num:               # 循环遍历列表
 
 直接得到flag
 
+## 攻防世界：xff_referer
 
+本题所需的工具:`BurpSuite`
 
+打开页面后发现说ip必须来自123.123.123.123
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130921554.webp)
 
+由于题目提到了`X-Forwarded-For`和`Referer:`
 
+所以怀疑是伪造xff和referer。先丢尽burpsuite里看看
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130926658.webp)
 
+果然，看样子题目的意思就是让我们填充(伪造)xff和referer
 
+X-Forwarded是填ip地址的那Referer是填我从哪来的，不知道题目的要求，就暂时说我从百度来吧
 
+在burpsuite中抓包然后在头部随便一个地方添加以下内容
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130929737.webp)
 
+然后再放包看看
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130929969.webp)
+
+好家伙你是真的挑
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130930440.webp)
+
+那就老老实实的改成我来自谷歌，顺着他。然后放包
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130931811.webp)
+
+最后成功拿到flag！
+
+`cyberpeace{f23f9b0f8f57f51b9a1c4182f319a9df}`
 
 
 
