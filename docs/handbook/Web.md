@@ -216,8 +216,65 @@ X-Forwarded是填ip地址的那Referer是填我从哪来的，不知道题目的
 
 `cyberpeace{f23f9b0f8f57f51b9a1c4182f319a9df}`
 
+## 攻防世界：get_post
+
+这题其实没啥难点，其实考核的地方就在于如何进行GET请求和POST请求
+
+打开页面是这样的有一个文字指引
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141920303.webp)
+
+根据他的要求进行GET请求一下就行了。
+
+GET请求的方法十分简单就是在url后面加上`?a=1`就行了
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141921245.webp)
+
+接下来的难点来了。
+
+**如何才能POST请求？**
+
+这个问题在一开始也困扰了我许久。
+
+查看别人的wp只说了工具的名称hackbak，等一系列的工具。但是并没有给出下载方式以及使用方法
+
+我个人目前发现的工具一共是两种，下载方法以及使用方法如下
+
+### 第一种：使用chrome的扩展来使用`hackbak`。
+
+hackbak的下载方式是使用GitHub上别人分享的，[hackbak下载链接](https://github.com/dkvirus/hackbar-for-Chrome)
+
+本人在这里也踩了一个坑，就是如果在chrome的扩展商店里直接下载hackbak的话会有以下问题
+
+* 需要付费
+* 不好用功能阉割了很多
+
+**注意：经过测试这个插件在edge浏览器中也可以使用，使用方法以及ui界面是一样的，但是下面以Chrome浏览器来演示**
+
+所以直接在GitHub上面下载开源免费且功能强大的使用就行了
+
+安装好之后呢按下F12打开选择这个
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141932089.webp)
+
+将url复制到下面的url栏中
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141933174.webp)
+
+在下面第一个箭头处直接就可以进行GET提交，然后下第二个箭头指向的地方填入b=2就可以进行POST传参
+
+如下图所示的填写方式：
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141935684.webp)
+
+填写完毕之后按下回车就可以进行提交得到flag。
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141935365.webp)
 
 
+## 第二种：`Postman`
+
+这是一个负责调试api接口的一个工具，他也可以实现这些功能，不过仅仅只是做这一题，POST请求的话，不是很方便，甚至可以说没必要，但还是有用
 
 
 
