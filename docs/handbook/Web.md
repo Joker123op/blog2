@@ -240,11 +240,11 @@ GET请求的方法十分简单就是在url后面加上`?a=1`就行了
 
 我个人目前发现的工具一共是两种，下载方法以及使用方法如下
 
-### 第一种：使用chrome的扩展来使用`hackbak`。
+### 第一种：使用chrome的扩展来使用`hackbar`。
 
-hackbak的下载方式是使用GitHub上别人分享的，[hackbak下载链接](https://github.com/dkvirus/hackbar-for-Chrome)
+`hackbar`的下载方式是使用GitHub上别人分享的，[hackbar下载链接](https://github.com/dkvirus/hackbar-for-Chrome)
 
-本人在这里也踩了一个坑，就是如果在chrome的扩展商店里直接下载hackbak的话会有以下问题
+本人在这里也踩了一个坑，就是如果在chrome的扩展商店里直接下载`hackbar`的话会有以下问题
 
 * 需要付费
 * 不好用功能阉割了很多
