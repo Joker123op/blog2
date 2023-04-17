@@ -58,7 +58,7 @@ module.exports = {
               children: [
                 { title: "数据库", path: "/handbook/sql" },
                 { title: "PHP", path: "/handbook/1" },
-                { title: "sql注入", path: "/handbook/7" },
+                { title: "SQL注入", path: "/handbook/7" },
                 { title: "XSS注入", path: "/handbook/2" }   
               ],
             }
