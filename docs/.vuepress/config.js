@@ -59,7 +59,7 @@ module.exports = {
                 { title: "数据库", path: "/handbook/sql" },
                 { title: "PHP", path: "/handbook/1" },
                 { title: "sql注入", path: "/handbook/7" },
-                { title: "xss注入", path: "/handbook/prs" }   
+                { title: "xss注入", path: "/handbook/2" }   
               ],
             }
         ]
