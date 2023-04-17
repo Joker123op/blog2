@@ -21,7 +21,16 @@ XSS简介
 
 拿到Cookie不等于拿到密码。（Cookie授权是有时效的）Cookie本身是不安全的，但是为了便捷并且利大于弊的情况下就选择了Cookie
 
+Js的标识：
+```JS
+<script>alert(1)</script> 设置了一个js弹窗
 
+<a href=javascript:alert(1)> 伪协议触发 
+
+<img src=1 onerror=alert(1) /> 事件方法（触发器：事件在标签里面on开头的东西很高概率是事件）
+```
+
+有的时候是缓存问题导致无法弹窗CTRL+F5就行了
 
 
 
