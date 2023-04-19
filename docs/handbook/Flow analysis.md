@@ -475,4 +475,39 @@ Database: yucctf
 [*] ending @ 10:10:53 /2023-04-19/
 ```
 
+接下来就是查看所有数据库里的表名了，看看哪个看起来是有藏有flag的
+
+首先sqlmap已经告诉我们这个是一个MySQL数据库
+
+一般情况下MySQL有一个自带的库名叫`information_schema`这里一般都是自带的东西，很少会将数据藏在这里，所以可以偷个懒，这里看一边过就行了
+
+接下来我们就慢慢的看看每个数据库里的表名是什么，有没有一些比较明显可疑的表名
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304192227328.webp)
+
+随后我们在一个名叫`message`的数据库里发现一个叫做flag的表。
+
+这一眼丁真，肯定有鬼
+
+马上锁定这个表看看里面有什么东西
+
+使用命令`sqlmap -u "http://hackattack.cn:1227/Va41IcUZk47qSxlUmgJuDe681ryyBajc/?id=1" --columns -T flag -D message`可以查看message这个库里的flag表里有什么字段
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304192229539.webp)
+
+这里也看到flag的数据类型是字符串类型，答案已经八九不离十了
+
+再使用命令查看这个字段里的数据`sqlmap -u "http://hackattack.cn:1227/Va41IcUZk47qSxlUmgJuDe681ryyBajc/?id=1" --columns -T flag -D message --dump`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304192231951.webp)
+
+`flag{a1a8887793acfc199182a649e905daab}`
+
+可以看到这里已经得到flag了，不过这个flag看起来貌似是md5加密后的
+
+这里使用在线[MD5解密](https://www.somd5.com/)平台解密看看
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304192236734.webp)
+
+然后成功解出密文，不过是chen一下子突然不自信了...(汗颜)
 
