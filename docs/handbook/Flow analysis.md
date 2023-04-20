@@ -535,13 +535,13 @@ Database: yucctf
 
 成功拿下flag，不过这个flag是被md5加密后的，需要拿去解密一下
 
-`flag{a1a8887793acfc199182a649e905daab}`
+<center>`flag{a1a8887793acfc199182a649e905daab}`</center>
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200841047.webp)
 
 flag里的东西解密后就是chen所以答案是
 
-`flag{chen}`
+<center>`flag{chen}`</center>
 
 
 
