@@ -15,18 +15,20 @@ module.exports = {
                   text: '小小工具',
                   items: [
                       { text: 'Github', link: '/handbook/Picture steganography' },
+                      { text: 'Github', link: '/handbook/Picture steganography' },
+                      { text: 'Github', link: '/handbook/Picture steganography' },
                   ]
                 }
             ],
         sidebar: [
-              {
-                title: '欢迎学习',
-                path: '/',
-                collapsable: false, // 是否折叠
-                children: [
-                    { title: "博客介绍", path: "/" }
-                ]
-              },
+            {
+              title: '欢迎学习',
+              path: '/',
+              collapsable: false, // 是否折叠
+              children: [
+                  { title: "博客介绍", path: "/" }
+              ]
+            },
             {
               title:"Python基础",
               path: '/handbook/Python notes',
