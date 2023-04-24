@@ -10,6 +10,12 @@ module.exports = {
                   items: [
                       { text: 'Github', link: 'https://github.com/Joker123op/blog2.git' },
                   ]
+                },
+                {
+                  text: '小小工具',
+                  items: [
+                      { text: 'Github', link: '/handbook/Picture steganography' },
+                  ]
                 }
             ],
         sidebar: [
