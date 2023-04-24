@@ -12,11 +12,17 @@ module.exports = {
                   ]
                 },
                 {
-                  text: '小小工具',
+                  text: '常用在线工具',
                   items: [
                       { text: 'Github', link: '/handbook/Picture steganography' },
                       { text: 'Github', link: '/handbook/Picture steganography' },
                       { text: 'Github', link: '/handbook/Picture steganography' },
+                  ]
+                },
+                {
+                  text: 'Ling blog',
+                  items: [
+                      { text: 'link', link: '/shellt' },
                   ]
                 }
             ],
