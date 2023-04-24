@@ -22,7 +22,7 @@ module.exports = {
                 {
                   text: 'Ling blog',
                   items: [
-                      { text: 'link', link: '/shellt' },
+                      { text: 'link', link: '/shellt/1.md' },
                   ]
                 }
             ],
