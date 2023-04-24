@@ -6,12 +6,6 @@ module.exports = {
             nav: [
                 { text: '首页', link: '/' },
                 {
-                  text: 'Ling blog',
-                  items: [
-                      { text: 'Github', link: 'https://github.com/Joker123op/blog2.git' },
-                  ]
-                },
-                {
                   text: '常用在线工具',
                   items: [
                       { text: '各进制ASCII码转字符串', link: 'https://www.asciim.cn/m/tools/convert_ascii_to_string.html' },
@@ -21,6 +15,14 @@ module.exports = {
                       { text: '进制转换', link: 'https://tool.lu/hexconvert/' },
                       { text: 'Base64在线解密', link: 'https://base64.us/' },
                       { text: 'MD5在线解密', link: 'https://www.somd5.com/' },
+                      { text: '佛曰', link: 'https://www.keyfc.net/bbs/tools/tudoucode.aspx' },
+                      { text: '新佛曰', link: 'http://hi.pcmoe.net/Buddha.html' },
+                  ]
+                },
+                {
+                  text: 'Ling blog',
+                  items: [
+                      { text: 'Github', link: 'https://github.com/Joker123op/blog2.git' },
                   ]
                 },
                 // {
