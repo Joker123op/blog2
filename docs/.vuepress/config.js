@@ -14,17 +14,21 @@ module.exports = {
                 {
                   text: '常用在线工具',
                   items: [
-                      { text: 'Github', link: '/handbook/Picture steganography' },
-                      { text: 'Github', link: '/handbook/Picture steganography' },
-                      { text: 'Github', link: '/handbook/Picture steganography' },
+                      { text: '各进制ASCII码转字符串', link: 'https://www.asciim.cn/m/tools/convert_ascii_to_string.html' },
+                      { text: '图片转base64编码', link: 'https://oktools.net/image2base64' },
+                      { text: 'MD5在线解密', link: 'https://www.somd5.com/' },
+                      { text: 'XSS在线平台', link: 'https://xssaq.com/login/' },
+                      { text: '进制转换', link: 'https://tool.lu/hexconvert/' },
+                      { text: 'Base64在线解密', link: 'https://base64.us/' },
+                      { text: 'MD5在线解密', link: 'https://www.somd5.com/' },
                   ]
                 },
-                {
-                  text: 'Ling blog',
-                  items: [
-                      { text: 'link', link: '/shellt/1.md' },
-                  ]
-                }
+                // {
+                //   text: 'Ling blog',
+                //   items: [
+                //       { text: 'link', link: '/shellt/1.md' },
+                //   ]
+                // }
             ],
         sidebar: [
             {
