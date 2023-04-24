@@ -56,10 +56,13 @@ module.exports = {
               path: '/handbook/sql',
               collapsable: true, // 是否折叠
               children: [
-                { title: "数据库", path: "/handbook/sql" },
-                { title: "PHP", path: "/handbook/1" },
-                { title: "SQL注入", path: "/handbook/7" },
-                { title: "XSS注入", path: "/handbook/2" }   
+                { title: "数据库", path: "/handbook/Database" },
+                { title: "PHP", path: "/handbook/php" },
+                { title: "SQL注入", path: "/handbook/sql" },
+                { title: "XSS注入", path: "/handbook/xss" },
+                { title: "文件上传", path: "/handbook/File" },
+                { title: "验证码绕过", path: "/handbook/CAPTCHA" },  
+                { title: "水平、垂直越权", path: "/handbook/Ultra" }
               ],
             }
         ]
