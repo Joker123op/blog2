@@ -83,7 +83,8 @@ module.exports = {
                 { title: "CSRF", path: "/handbook/csrf" },
                 { title: "文件上传", path: "/handbook/File" },
                 { title: "验证码绕过", path: "/handbook/CAPTCHA" },  
-                { title: "水平、垂直越权", path: "/handbook/Ultra" }
+                { title: "水平、垂直越权", path: "/handbook/Ultra" },
+                { title: "SSRF-服务端请求伪造", path: "handbook/ssrf" }
               ],
             }
         ]
