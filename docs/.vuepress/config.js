@@ -84,7 +84,8 @@ module.exports = {
                 { title: "文件上传", path: "/handbook/File" },
                 { title: "验证码绕过", path: "/handbook/CAPTCHA" },  
                 { title: "水平、垂直越权", path: "/handbook/Ultra" },
-                { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" }
+                { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" },
+                { title: "XXE-实体注入攻击", path: "/handbook/XXE" }
               ],
             }
         ]
