@@ -835,5 +835,62 @@ flag里的东西解密后就是chen所以答案是
 
 `flag{chen}`
 
-## 攻防世界:
+## 攻防世界: easyupload
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111442088.webp)
+
+打开后是一个正常的图片文件上传题目
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111443948.webp)
+
+先测一下他是使用黑名单还是白名单过滤
+
+上传一个不存在的扩展名`测试.a`很明显a这个扩展名不存在，上传看看他是什么反应
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111445968.webp)
+
+如愿以偿，或许只有GIF、JPG、PNG类型的文件才可以上传。那就已经杜绝了PHP特殊后缀的上传
+
+上传一个带有一句话木马的jpg图马，看看存在文件头检测不
+
+![](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111445968.webp)
+
+还是这个结果。说明他不仅限制了扩展名的上传，同时也会检测文件里面的Hex值是否存在木马
+
+这个时候可以试试[`.user.ini`的方法](https://blog.csdn.net/weixin_53146913/article/details/124840296#:~:text=.user.ini%20%E6%98%AFPHP%20%E6%94%AF%E6%8C%81%E5%9F%BA%E4%BA%8E%E6%AF%8F%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%9A%84%20INI%20%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E3%80%82%20%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%20PHP,%E4%BB%A5%E6%A8%A1%E5%9D%97%E5%8C%96%E8%BF%90%E8%A1%8C%E5%9C%A8%20Apache%20%E9%87%8C%EF%BC%8C%E5%88%99%E7%94%A8.htaccess%20%E6%96%87%E4%BB%B6%E6%9C%89%E5%90%8C%E6%A0%B7%E6%95%88%E6%9E%9C%E3%80%82%20%E8%BF%99%E9%87%8C%E5%B0%B1%E5%BE%88%E6%B8%85%E6%A5%9A%E4%BA%86%EF%BC%8C.user.ini%20%E5%AE%9E%E9%99%85%E4%B8%8A%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E7%94%B1%E7%94%A8%E6%88%B7%E2%80%9C%E8%87%AA%E5%AE%9A%E4%B9%89%E2%80%9D%E7%9A%84php.ini%EF%BC%8C%E6%88%91%E4%BB%AC%E8%83%BD%E5%A4%9F%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%98%AF%E6%A8%A1%E5%BC%8F%E4%B8%BA%E2%80%9CPHP_INI_PERDIR%20%E3%80%81%20PHP_INI_USER%E2%80%9D%E7%9A%84%E8%AE%BE%E7%BD%AE%E3%80%82)
+
+> 除了主 php.ini 之外，PHP 还会在每个目录下扫描 INI 文件，从被执行的 PHP 文件所在目录开始一直上升到 web 根目录`($_SERVER['DOCUMENT_ROOT'] 所指定的)`。如果被执行的 PHP 文件在 web 根目录之外，则只扫描该目录。
+
+.user.ini 是PHP 支持基于每个目录的 INI 文件配置。如果你的 PHP 以模块化运行在 Apache 里，则用 .htaccess 文件有同样效果。
+
+所以可以使用这种方法进行文件包含
+
+在Windows环境下无法直接创建.user.ini文件。但是我们可以暂时先创建一个名为`user.ini`的文件。然后使用记事本打开进行编辑
+
+`.user.ini`里的文件内容为：
+
+```
+GIF89a
+
+auto_prepend_file=a.jpg
+```
+
+`GIF89a`是GIF类型的文件头
+
+`auto_auto_prepend_file=a.jpg`中的a.jpg则是你要以php文件进行执行的文件名
+
+编写好以上内容之后打开BurpSuite打开拦截然后抓包，将上传中的user.ini改为.user.ini即可
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111500287.webp)
+
+还需注意的是要将数据包中的`Content-Type`改为image/jpeg再放包。否则依然会被拦截
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111503854.webp)
+
+上传成功
+
+接下来就是上传包含一句话木马并且文件名为a.jpg的文件
+
+
+
 
