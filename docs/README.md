@@ -1,9 +1,9 @@
 ---
 home: true
-heroText: Ling个人博客
+heroText: Lingのblog
 tagline: 一个基于 VuePress 的个人博客
 actionText: Welcome →
-actionLink: /handbook/Python notes/
+actionLink: /handbook/Python笔记/
 features:
 - title: 一个菜鸟的学习过程
   details: 以 Markdown 为中心的语法结构，写出属于自己的文章。
