@@ -52,7 +52,7 @@ module.exports = {
                       children: [
                         { title: "图片隐写", path: "/handbook/图片隐写" },
                         { title: "流量分析", path: "/handbook/流量分析" },
-                        { title: "Web", path: "/handbook/web" },
+                        { title: "Web", path: "/handbook/Web" },
                         // { title: "图片隐写", path: "/handbook/Modern cryptography" },
                         { title: "密码学", path: "/handbook/密码学" }        
                       ],
@@ -67,7 +67,7 @@ module.exports = {
                     },
                     {
                       title:"渗透",
-                      path: '/handbook/sql',
+                      path: '/handbook/Database',
                       collapsable: true, // 是否折叠
                       children: [
                         { title: "数据库", path: "/handbook/Database" },
