@@ -1,7 +1,7 @@
 module.exports = {
     base: '/blog2/', // 这个路径名称就是你刚才所配置的项目名！！！，斜杠不能漏！！！
-    title: 'Ling blog',
-    description: 'Ling blog',
+    title: 'Lingのblog',
+    description: 'Lingのblog',
     themeConfig: {
             nav: [
                 { text: '首页', link: '/' },
@@ -25,70 +25,64 @@ module.exports = {
                       { text: 'Github', link: 'https://github.com/Joker123op/blog2.git' },
                   ]
                 },
-                // {
-                //   text: 'Ling blog',
-                //   items: [
-                //       { text: 'link', link: '/shellt/1.md' },
-                //   ]
-                // }
-            ],
-        sidebar: [
-            {
-              title: '欢迎学习',
-              path: '/',
-              collapsable: false, // 是否折叠
-              children: [
-                  { title: "博客介绍", path: "/" }
-              ]
-            },
-            {
-              title:"Python基础",
-              path: '/handbook/Python notes',
-              title:"Python3基础",
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "Python笔记", path: "/handbook/Python notes" },    
-                { title: "密码学", path: "/handbook/Cryptography" } 
               ],
-            },
-            {
-              title:"CTF:wp",
-              path: '/handbook/Picture steganography',
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "图片隐写", path: "/handbook/Picture steganography" },
-                { title: "流量分析", path: "/handbook/Flow analysis" },
-                { title: "Web", path: "/handbook/Web" },
-                // { title: "图片隐写", path: "/handbook/Modern cryptography" },
-                { title: "现代密码学", path: "/handbook/Modern cryptography" }        
-              ],
-            },
-            {
-              title:"逆向",
-              path: '/handbook/Reverse',
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "C/C++", path: "/handbook/Reverse" }    
-              ],
-            },
-            {
-              title:"渗透",
-              path: '/handbook/sql',
-              collapsable: true, // 是否折叠
-              children: [
-                { title: "数据库", path: "/handbook/Database" },
-                { title: "PHP", path: "/handbook/php" },
-                { title: "SQL注入", path: "/handbook/sql" },
-                { title: "XSS注入", path: "/handbook/xss" },
-                { title: "CSRF", path: "/handbook/csrf" },
-                { title: "文件上传", path: "/handbook/File" },
-                { title: "验证码绕过", path: "/handbook/CAPTCHA" },  
-                { title: "水平、垂直越权", path: "/handbook/Ultra" },
-                { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" },
-                { title: "XXE-实体注入攻击", path: "/handbook/XXE" },
-                { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" }
-              ],
-            }
-        ]
+                sidebar: [
+                    {
+                      title: '欢迎学习',
+                      path: '/',
+                      collapsable: false, // 是否折叠
+                      children: [
+                          { title: "博客介绍", path: "/" }
+                      ]
+                    },
+                    {
+                      title:"Python基础",
+                      path: '/handbook/Python笔记',
+                      title:"Python3基础",
+                      collapsable: true, // 是否折叠
+                      children: [
+                        { title: "Python笔记", path: "/handbook/Python笔记" },    
+                        { title: "Python解码", path: "/handbook/Python解码" } 
+                      ],
+                    },
+                    {
+                      title:"CTF:wp",
+                      path: '/handbook/图片隐写',
+                      collapsable: true, // 是否折叠
+                      children: [
+                        { title: "图片隐写", path: "/handbook/图片隐写" },
+                        { title: "流量分析", path: "/handbook/流量分析" },
+                        { title: "Web", path: "/handbook/web" },
+                        // { title: "图片隐写", path: "/handbook/Modern cryptography" },
+                        { title: "密码学", path: "/handbook/密码学" }        
+                      ],
+                    },
+                    {
+                      title:"逆向",
+                      path: '/handbook/Reverse',
+                      collapsable: true, // 是否折叠
+                      children: [
+                        { title: "C/C++", path: "/handbook/Reverse" }    
+                      ],
+                    },
+                    {
+                      title:"渗透",
+                      path: '/handbook/sql',
+                      collapsable: true, // 是否折叠
+                      children: [
+                        { title: "数据库", path: "/handbook/Database" },
+                        { title: "PHP", path: "/handbook/php" },
+                        { title: "SQL注入", path: "/handbook/sql" },
+                        { title: "XSS注入", path: "/handbook/xss" },
+                        { title: "CSRF", path: "/handbook/csrf" },
+                        { title: "文件上传", path: "/handbook/文件上传" },
+                        { title: "验证码绕过", path: "/handbook/验证码绕过" },  
+                        { title: "水平、垂直越权", path: "/handbook/水平、垂直越权" },
+                        { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" },
+                        { title: "XXE-实体注入攻击", path: "/handbook/XXE" },
+                        { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" }
+                      ],
+                    }
+                ]
     }
 }
