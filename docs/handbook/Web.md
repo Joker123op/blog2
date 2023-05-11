@@ -118,7 +118,7 @@
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304130034894.webp)
 
-## simple_js
+##攻防世界：simple_js
 
 这是一道很有意思的题目打开网页后，会弹出一个登录框要你输入密码。
 
