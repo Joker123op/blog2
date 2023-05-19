@@ -304,7 +304,7 @@ $_SERVER["REMOTE_ADDR"] # 浏览网页的用户ip
 
 
 
- 
+
 
 在浏览器页面制作一个输入栏
 
@@ -358,7 +358,7 @@ mysqli_close($conn)
 
 
 表单标签:
-  
+
 `<form action="URL" method = "GET/POST">`url表示如果你在表单里输入了东西点击提交他会提交到这个url中.
 
 
@@ -538,9 +538,6 @@ foreach ($array as $val)    # 遍历数组
 橘子
 榴莲
 ```
-
-
-
 
 
 
