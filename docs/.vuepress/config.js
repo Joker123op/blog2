@@ -79,7 +79,8 @@ module.exports = {
                       { title: "水平、垂直越权", path: "/handbook/水平、垂直越权" },
                       { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" },
                       { title: "XXE-实体注入攻击", path: "/handbook/XXE" },
-                      { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" }
+                      { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" },
+                      { title: "信息收集", path: "/handbook/信息收集"}
                     ],
                   }
               ]
