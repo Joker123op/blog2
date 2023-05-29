@@ -271,10 +271,49 @@ GET请求的方法十分简单就是在url后面加上`?a=1`就行了
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304141935365.webp)
 
+### 第二种：使用Python脚本
 
-### 第二种：`Postman`
+首先按照题目要求get和post一个传参，构建以下代码。
+
+```python
+import requests
+
+url = 'http://61.147.171.105:52522?a=1'		# 在url中直接进行get请求
+b = {'b': 2}                                # 构建字典按照题目要求构建一个名为b值为2的post请求然后再发送
+x = requests.post(url, data=b)
+
+print(x.text)								# 将最终结果以txt文本的形式返回在终端
+```
+
+这是他终端返回的数据包的结果
+
+```
+ï»¿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST&GET</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<h1>è¯·ç¨GETæ¹å¼æäº¤ä¸ä¸ªåä¸ºa,å¼ä¸º1çåé</h1>
+
+<h1>è¯·åä»¥POSTæ¹å¼éä¾¿æäº¤ä¸ä¸ªåä¸ºb,å¼ä¸º2çåé</h1><h1>cyberpeace{cc63272487b69b4212824bde3ef61376}</h1>
+</body>
+</html>
+```
+
+可以看到他最终是以网站源码html的格式返回数据包，而我们想要的flag就在这里，成功拿到flag！
+
+
+
+### 第三种：`Postman`
 
 这是一个负责调试api接口的一个工具，他也可以实现这些功能，不过仅仅只是做这一题，POST请求的话，不是很方便，甚至可以说没必要，但还是有用
+
+详情懒得写了，相对来说个人认为是最麻烦的
 
 ## 某不知名的靶场题目
 
