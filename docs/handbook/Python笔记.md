@@ -42,7 +42,7 @@ print(f"厦软的{czx}")
 
 ## 在字符串中间按规律插入字符
 
-* 使用re模块
+* 方法一：使用re模块
 
 首先记得导包
 ```Python
@@ -64,6 +64,33 @@ re.compile(‘,{n}’)固定函数。
 函数参数介绍:
 
 ![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202303271155487.webp)
+
+* 方法二：使用for循环遍历添加
+
+原理就是利用pythonfor循环的特点进行遍历，再配合切片的操作，最后利用字符串拼接的办法进行连接.
+
+以下实例是某道ctf的题的解题步骤之一，这样运行出来的结果就是将字符串没隔2位插入一个空格字符的结果
+
+```python
+flag = 'c8e9aca0c6f2e5f3e8c4efe7a1a0d4e8e5a0e6ece1e7a0e9f3baa0e8eafae3f9e4eafae2eae4e3eaebfaebe3f5e7e9f3e4e3e8eaf9eaf3e2e4e6f2'
+x = ''
+for i in range(0, len(flag), 2):
+    print(flag[i:i+2], end=' ')
+```
+
+这样的作法是将插入后的字符串打印出来，如果想要将字符串保存在变量里以方便下一步的操作，则需要用到字符串拼接。
+
+实例：
+
+```python
+flag = 'c8e9aca0c6f2e5f3e8c4efe7a1a0d4e8e5a0e6ece1e7a0e9f3baa0e8eafae3f9e4eafae2eae4e3eaebfaebe3f5e7e9f3e4e3e8eaf9eaf3e2e4e6f2'
+x = ''
+for i in range(0, len(flag), 2):
+    x += flag[i:i+2] + ' '
+print(x)
+```
+
+这样就可以将插入空格后的字符串保存在变量里以方便下一步的操作。
 
 ## 字符串替换
 
@@ -214,7 +241,7 @@ for i in str:
 
 这种办法就可以将纯数字的列表打印出来不带括号。
 
-## if __name__ == '__main__':
+## if __name__ == '__main__':`
 
 if __name__ == '__main__': 是 Python 中一个常用的条件语句，它表示如果当前脚本是直接被运行的，而不是被导入到其他脚本中的话，那么就执行 if 语句块中的代码。这样做是为了避免在导入模块时执行一些不必要的代码。
 
@@ -236,4 +263,24 @@ if __name__ == '__main__':
 
 Python的列表和其他语言有些不一样，他有一个特点就是，一个列表里可以存储任何类型的数据
 
- 
+ ## 使用requests模块对网站进行文件上传
+
+这个方法在写ctf的题目条件竞争的时候有用，不过还需要开启多线程，否则单线程进行请求起不到什么作用，了解一下就好了
+
+上代码
+
+```python
+import requests
+# 利用requests模块对url的目标网站进行post上传文件，可以为后续的条件竞争做铺垫
+
+file = {'upfile': open('abc.jpg', 'rb')} # 定义一个字典，并从本地获取文件以二进制格式写入
+
+url = 'http://61.147.171.105:57472'
+flag = requests.post(url, files=file)
+print(flag.text)
+```
+
+需要注意的是在file这个函数里的字典`upfile`是不固定的。每个网站对用户上传的文件命名是不一样的，所以需要按照实际情况进行适当修改
+
+
+
