@@ -17,7 +17,7 @@ module.exports = {
                     { text: 'MD5在线解密', link: 'https://www.somd5.com/' },
                     { text: '佛曰', link: 'https://www.keyfc.net/bbs/tools/tudoucode.aspx' },
                     { text: '新佛曰', link: 'http://hi.pcmoe.net/Buddha.html' },
-                    { textL: '反编译pyc', link: 'https://tool.lu/pyc/'}
+                    { text: '反编译pyc', link: 'https://tool.lu/pyc/'}
                 ]
               },
               {
