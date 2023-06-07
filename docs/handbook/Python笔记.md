@@ -259,9 +259,127 @@ if __name__ == '__main__':
     pass # 表示不需要进行任何操作
 ```
 
-## 列表
+## 异常处理
 
-Python的列表和其他语言有些不一样，他有一个特点就是，一个列表里可以存储任何类型的数据
+在日常编写程序的时候，如果需要将程序打包好发给别人用，而有些人不按照你编写程序的使用流程来使用会导致一些奇怪的报错例如
+
+```
+x = int(input("请输入一个数字："))
+```
+
+此时用户缺偏偏输入了一个string类型的字符串这个时候就会产生类型错误
+
+### 什么是异常？
+
+> 异常即是一个事件，该事件会在程序执行过程中发生，影响了程序的正常执行。
+
+> 一般情况下，在Python无法正常处理程序时就会发生一个异常。
+
+> 异常是Python对象，表示一个错误。
+
+> 当Python脚本发生异常时我们需要捕获处理它，否则程序会终止执行。
+
+> 异常的出现就是用来来预判python程序会产生什么样的报错而出现的。可以防止程序异常终止(程序在不限制的情况下遇见报错会直接终止运行)。
+
+**python异常的使用模板以及格式为:**
+
+```python
+try:
+	x = int(input('请输入数字'))
+except 错误类型:
+	print("")		# 需要执行的语句
+```
+
+**这个结构是不是很熟悉？没错和你想象的一样，他也可以像if一样进行嵌套**
+
+语法为：
+
+```python
+try:
+	pass
+
+except 错误类型:
+	pass
+	
+except 错误类型:
+```
+
+介绍完结构之后，最重要的错误类型是什么？如何判断？
+
+### 错误类型
+
+在python中程序出现异常导致程序终止时正常情况下会显示一个错误类型，即因为什么原因导致的错误导致进程结束
+
+例如:
+
+```python
+x = int(input(''))
+# 此时键盘输入一个字符串d
+```
+
+报错结果
+
+> **Traceback (most recent call last):**
+>   **File "D:\vs code\Python\XXX.py", line 147, in <module>**
+>     **x = int(input(''))**
+>         **^^^^^^^^^^^^^^**
+> `ValueError`**: invalid literal for int() with base 10: 'd'**
+
+可以看到在报错里python还会很贴心的告诉你你这个错误的错误类型，这样你就可以很方便的编写程序的异常处理
+
+在python中还有非常多的错误类型，以下是python的常见错误类型
+
+| 异常名称                  |                        描述                        |
+| :------------------------ | :------------------------------------------------: |
+|                           |                                                    |
+| BaseException             |                   所有异常的基类                   |
+| SystemExit                |                   解释器请求退出                   |
+| KeyboardInterrupt         |             用户中断执行(通常是输入^C)             |
+| Exception                 |                   常规错误的基类                   |
+| StopIteration             |                 迭代器没有更多的值                 |
+| GeneratorExit             |        生成器(generator)发生异常来通知退出         |
+| StandardError             |              所有的内建标准异常的基类              |
+| ArithmeticError           |               所有数值计算错误的基类               |
+| FloatingPointError        |                    浮点计算错误                    |
+| OverflowError             |                数值运算超出最大限制                |
+| ZeroDivisionError         |            除(或取模)零 (所有数据类型)             |
+| AssertionError            |                    断言语句失败                    |
+| AttributeError            |                  对象没有这个属性                  |
+| EOFError                  |             没有内建输入,到达EOF 标记              |
+| EnvironmentError          |                 操作系统错误的基类                 |
+| IOError                   |                 输入/输出操作失败                  |
+| OSError                   |                    操作系统错误                    |
+| WindowsError              |                    系统调用失败                    |
+| ImportError               |                 导入模块/对象失败                  |
+| LookupError               |                 无效数据查询的基类                 |
+| IndexError                |              序列中没有此索引(index)               |
+| KeyError                  |                  映射中没有这个键                  |
+| MemoryError               |     内存溢出错误(对于Python 解释器不是致命的)      |
+| NameError                 |            未声明/初始化对象 (没有属性)            |
+| UnboundLocalError         |               访问未初始化的本地变量               |
+| ReferenceError            | 弱引用(Weak reference)试图访问已经垃圾回收了的对象 |
+| RuntimeError              |                  一般的运行时错误                  |
+| NotImplementedError       |                   尚未实现的方法                   |
+| SyntaxError               |                  Python 语法错误                   |
+| IndentationError          |                      缩进错误                      |
+| TabError                  |                   Tab 和空格混用                   |
+| SystemError               |                一般的解释器系统错误                |
+| TypeError                 |                  对类型无效的操作                  |
+| ValueError                |                   传入无效的参数                   |
+| UnicodeError              |                 Unicode 相关的错误                 |
+| UnicodeDecodeError        |                Unicode 解码时的错误                |
+| UnicodeEncodeError        |                 Unicode 编码时错误                 |
+| UnicodeTranslateError     |                 Unicode 转换时错误                 |
+| Warning                   |                     警告的基类                     |
+| DeprecationWarning        |               关于被弃用的特征的警告               |
+| FutureWarning             |           关于构造将来语义会有改变的警告           |
+| OverflowWarning           |        旧的关于自动提升为长整型(long)的警告        |
+| PendingDeprecationWarning |              关于特性将会被废弃的警告              |
+| RuntimeWarning            |      可疑的运行时行为(runtime behavior)的警告      |
+| SyntaxWarning             |                  可疑的语法的警告                  |
+| UserWarning               |                 用户代码生成的警告                 |
+
+通过以上内容，如果学习结束后，你就可以对自己的程序进行一些简单的异常处理了
 
  ## 使用requests模块对网站进行文件上传
 
@@ -281,6 +399,16 @@ print(flag.text)
 ```
 
 需要注意的是在file这个函数里的字典`upfile`是不固定的。每个网站对用户上传的文件命名是不一样的，所以需要按照实际情况进行适当修改
+
+上传的图片可以写绝对路径也可以是相对路径
+
+
+
+
+
+
+
+
 
 
 
