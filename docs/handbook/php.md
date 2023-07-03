@@ -72,18 +72,40 @@ header("Content-Type:text/html;charset=utf-8");  # 第二种
 ?>
 ```
 
-## PHP标识
+## PHP的基本标识
 
 因为在php的代码中的允许出现其他前端代码的混淆，所以我们需要一个标识来告诉浏览器从这一部分开始，就是我的php代码了。
 
 常见的php代码标识一共有三种，如下：
 
-```PHP
-<?php ?>
+1. XML风格
 
-<script language="php" >
+```php
+<?php
+echo "这是XML风格标记！";
+?>
+```
 
+2. 脚本风格
+
+```php
+<script language="php">
+echo "这是脚本风格的标记！";
 </script>
+```
+
+3. 简短风格
+
+```php
+<? echo "这是简短风格的标记"; ?>
+```
+
+4. ASP风格
+
+```php
+<%
+echo "这是ASP风格的标记！";
+%>
 ```
 
 其中常见的表示是前两种，在正常情况下主要是第一种比较多，但第二种常见于绕过对php的检测时使用。
@@ -268,7 +290,84 @@ switch ("变量名")
  ```
 `@$a`在变量名前面加上一个@就可以屏蔽报错，也就是说即使在你代码出现错误以及问题的情况下是不会报错的。
 
+## 数组的创建
 
+在php中创建一个数组十分简单，并且不需要给定数组的长度例如
+
+```
+<?php
+$a = array(1,2,3,4,5)
+?>
+```
+
+
+
+## foreach循环(只适用于数组循环)
+
+foreach 循环用于遍历数组。
+
+### 语法
+
+```
+foreach ($array as $value)
+{
+    要执行代码;
+}
+```
+
+每进行一次循环，当前数组元素的值就会被赋值给 $value 变量（数组指针会逐一地移动），在进行下一次循环时，您将看到数组中的下一个值。
+
+```
+foreach ($array as $key => $value)
+{
+    要执行代码;
+}
+```
+
+每一次循环，当前数组元素的键与值就都会被赋值给 $key 和 $value 变量（数字指针会逐一地移动），在进行下一次循环时，你将看到数组中的下一个键与值。
+
+### 实例
+
+下面的实例演示了一个输出给定数组的值的循环：
+
+## 实例
+
+```php
+<?php
+$x=array("Google","Runoob","Taobao"); 
+foreach ($x as $value) {
+    echo $value . PHP_EOL; 
+} 
+?>
+```
+
+输出：
+
+```
+Google
+Runoob
+Taobao
+```
+
+下面的实例演示了一个输出给定数组键与值的循环：
+
+## 实例
+
+```php
+<?php 
+$x=array(1=>"Google", 2=>"Runoob", 3=>"Taobao"); 
+foreach ($x as $key => $value) {
+	echo "key  为 " . $key . "，对应的 value 为 ". $value . PHP_EOL; 
+} ?>
+```
+
+输出：
+
+```
+key  为 1，对应的 value 为 Google
+key  为 2，对应的 value 为 Runoob
+key  为 3，对应的 value 为 Taobao
+```
 
 ## PHP超全局变量
 
