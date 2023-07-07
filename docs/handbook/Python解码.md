@@ -58,59 +58,78 @@ Base64的本质其实就是将需要加密的字符转化为这个字符的二�
 
 ### 使用Python自带的库可以快速简便的将base64加解密
 
-源码：
+下面附上完整源码：
 
 ```Python
 import base64
-
-
-def encode_base64(string_1: str) -> str:
-    input_bytes = string_1.encode('utf-8')
-    encoded_bytes = base64.b64encode(input_bytes)
-    return encoded_bytes.decode('utf-8')
-
-
-def decode_base64(string_2: str) -> str:
-    encoded_bytes = string_2.encode('utf-8')
-    decoded_bytes = base64.b64decode(encoded_bytes)
-    return decoded_bytes.decode('utf-8')
-
+import binascii
 
 while True:
-    if __name__ == '__main__':
-        print("注：如果解不出则是base64编码格式有误")
-        choice = input('请选择编码 (e) 或解码 (d): ')
-        if choice == 'e':
-            string_1 = input('请输入要编码的字符串: ')
-            print(encode_base64(string_1))
-            xml3 = str(input("继续(1)\n退出(0)"))
-            if xml3 == '1':
-                pass
-            elif xml3 == '0':
-                break
-            else:
-                xml3 = input('无效选择,按回车键自动重启')
-                pass
-        elif choice == 'd':
-            string_2 = input('请输入要解码的 base64 字符串: ')
-            print(decode_base64(string_2))
-            xml = int(input("继续(1)\n退出(0)"))
-            if xml == '1':
-                pass
-            elif xml == '0':
-                break
-            else:
-                xml = input('无效选择,按回车键自动重启')
-        else:
-            print('无效选择')
-            xml2 = str(input("继续(1)\n退出(0)"))
-            if xml2 == '1':
-                pass
-            elif xml2 == '0':
-                break
-            else:
-                xml2 = input('无效选择,按回车键自动重启')
-                pass
+    try:
+        def encode_base64(string_1: str) -> str:
+            input_bytes = string_1.encode('utf-8')
+            encoded_bytes = base64.b64encode(input_bytes)
+            return encoded_bytes.decode('utf-8')
+
+
+        def decode_base64(string_2: str) -> str:
+            encoded_bytes = string_2.encode('utf-8')
+            decoded_bytes = base64.b64decode(encoded_bytes)
+            return decoded_bytes.decode('utf-8')
+
+
+        while True:
+            if __name__ == '__main__':
+                print("\n--------------------------------")
+                print("注：如果解不出则是base64编码格式有误")
+                choice = input('请选择编码 (e) 或解码 (d) 退出(b)')
+
+                if choice == 'e':
+                    string_1 = input('请输入要编码的字符串: ')
+                    print(encode_base64(string_1))
+                    xml3 = str(input("继续(1)\n退出(0)"))
+                    if xml3 == '1':
+                        pass
+                    elif xml3 == '0':
+                        exit()
+                    else:
+                        xml3 = input('无效选择,按回车键自动重启')
+                        pass
+
+                elif choice == 'd':
+                    string_2 = input('请输入要解码的 base64 字符串: ')
+                    print(decode_base64(string_2))
+                    xml = str(input("继续(1)\n退出(0)"))
+                    if xml == '1':
+                        pass
+                    elif xml == '0':
+                        exit()
+                    else:
+                        xml = input('无效选择,按回车键自动重启')
+
+                elif choice == 'b':
+                    exit()
+
+                else:
+                    print('无效选择!')
+                    xml2 = str(input("继续(1)\n退出(0)"))
+                    if xml2 == '1':
+                        pass
+                    elif xml2 == '0':
+                        exit()
+                    else:
+                        xml2 = input('无效选择,按回车键自动重启')
+
+
+    except binascii.Error:
+        print('\n\n解码的字符串不符合base64的格式！')
+
+
+    except UnicodeDecodeError:
+        print('\n\n解码的字符串不符合base64的格式！')
+
+    except MemoryError:
+        print('\n\n输入字符过长无法处理.......')
 ```
 
 

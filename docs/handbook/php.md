@@ -369,6 +369,37 @@ key  为 2，对应的 value 为 Runoob
 key  为 3，对应的 value 为 Taobao
 ```
 
+## 字符串相关操作函数
+
+<br />
+
+### 1. 去除字符串首尾空格和特殊字符
+
+```php
+<?php
+$str = trim("  abcd$");
+?>
+```
+
+### 2. 获取字符串长度
+
+```php
+echo strlen('addadwd') // 按字符个数进行获取(根据字节来统计)
+    
+echo mb_strlen('adwadad') // 按字数个进行获取
+```
+
+### 3. 截取字符串
+
+```php
+substr(string str, int start, int length); // 截取除中文以外的字符串
+
+$str = 'ghyudfheuihjfiojeof';
+echo substr($str, 0, 5);
+```
+
+
+
 ## PHP超全局变量
 
 在浏览器中一般有2种请求方式。分别是`GET`请求和`POST`请求。

@@ -38,6 +38,16 @@ Js的标识：
 
 事件功能非常强大，甚至可以监听键盘鼠标，左键右键，屏幕。
 
+弹出网站cookie
+
+```js
+<script>alert(document.cookie)</script> // 设置了一个js弹窗
+
+<a href=javascript:alert(document.cookie)> // 伪协议触发
+
+<img src=1 onerror=alert(document.cookie) /> // 事件方法（触发器：事件在标签里面on开头的东西很高概率是事件）触发条件是src=1，因为这个本身不成立所以执行了后面的语句
+```
+
 XSS分为三种类型：
 
 * 反射型：你给我传参，然后触发了Js，如果你不给我传参，就不存在(传参里必须包含恶意语句才是标准的反射性XSS语句)
@@ -138,7 +148,6 @@ Document的对象属性
 在真是网络环境中，还会存在一些伪静态网页，他们本质上还是动态。一样可以进行SQL注入。判断方法是使用函数`document.lastModified`来查看
 
 要依靠当前页面JS才能触发的漏洞，可以理解为dom型xss
-
 
 
 
