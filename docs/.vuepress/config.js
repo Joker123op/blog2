@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/blog2/', // 这个路径名称就是你刚才所配置的项目名！！！，斜杠不能漏！！！
+  base: '/blog2/',                  // 这个路径名称就是你刚才所配置的项目名！！！，斜杠不能漏！！！
   title: 'Lingのblog',
   description: 'Lingのblog',
   themeConfig: {
@@ -70,6 +70,7 @@ module.exports = {
                     path: '/handbook/Database',
                     collapsable: true, // 是否折叠
                     children: [
+                      { ttile: "网络通讯基础", path: "/handbook/网络通讯基础"},
                       { title: "数据库", path: "/handbook/Database" },
                       { title: "PHP", path: "/handbook/php" },
                       { title: "SQL注入", path: "/handbook/sql" },
