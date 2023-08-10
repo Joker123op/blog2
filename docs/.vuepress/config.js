@@ -65,14 +65,6 @@ module.exports = {
                       { title: "C/C++", path: "/handbook/Reverse" }    
                     ],
                   },
-                  // {
-                  //   title:"NA",
-                  //   path: '/handbook/网络通讯基础',
-                  //   collapsable: true, // 是否折叠
-                  //   children: [
-                  //     {title: "网络通讯基础"}
-                  //   ]
-                  // },
                   {
                     title:"渗透",
                     path: '/handbook/网络通讯基础',
