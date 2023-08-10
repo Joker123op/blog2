@@ -78,7 +78,7 @@ module.exports = {
                     path: '/handbook/网络通讯基础',
                     collapsable: true, // 是否折叠
                     children: [
-                      { ttile: "NA基础", path: "/handbook/网络通讯基础" },
+                      { ttile: "NA基础", path: "/handbook/NA" },
                       { title: "数据库", path: "/handbook/Database" },
                       { title: "PHP", path: "/handbook/php" },
                       { title: "SQL注入", path: "/handbook/sql" },
