@@ -70,7 +70,6 @@ module.exports = {
                     path: '/handbook/NA',
                     collapsable: true, // 是否折叠
                     children: [
-                      { ttile: "NA基础", path: "/handbook/NA" },
                       { title: "数据库", path: "/handbook/Database" },
                       { title: "PHP", path: "/handbook/php" },
                       { title: "SQL注入", path: "/handbook/sql" },
@@ -82,7 +81,8 @@ module.exports = {
                       { title: "SSRF-服务端请求伪造", path: "handbook/SSRF" },
                       { title: "XXE-实体注入攻击", path: "/handbook/XXE" },
                       { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" },
-                      { title: "信息收集", path: "/handbook/信息收集"}
+                      { title: "信息收集", path: "/handbook/信息收集"},
+                      { ttile: "NA基础", path: "/handbook/NA" }
                     ],
                   }
               ]
