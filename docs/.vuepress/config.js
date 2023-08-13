@@ -67,7 +67,7 @@ module.exports = {
                   },
                   {
                     title:"渗透",
-                    path: '/handbook/网络通讯基础',
+                    path: '/handbook/NA',
                     collapsable: true, // 是否折叠
                     children: [
                       { ttile: "NA基础", path: "/handbook/NA" },
