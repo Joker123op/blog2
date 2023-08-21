@@ -67,7 +67,7 @@ module.exports = {
                   },
                   {
                     title:"渗透",
-                    path: '/handbook/NA',
+                    path: '/handbook/Database',
                     collapsable: true, // 是否折叠
                     children: [
                       { title: "数据库", path: "/handbook/Database" },
@@ -82,6 +82,13 @@ module.exports = {
                       { title: "XXE-实体注入攻击", path: "/handbook/XXE" },
                       { title: "代码执行漏洞", path: "/handbook/代码执行漏洞" },
                       { title: "信息收集", path: "/handbook/信息收集"},
+                    ],
+                  },
+                  {
+                    title: "信息通讯基础",
+                    path: "/handbook/NA",
+                    collapsable: true, // 是否折叠
+                    children: [
                       { ttile: "NA基础", path: "/handbook/NA" }
                     ],
                   }
