@@ -89,7 +89,7 @@ module.exports = {
                     path: "/handbook/NA",
                     collapsable: true, // 是否折叠
                     children: [
-                      { ttile: "NA基础", path: "/handbook/NA" }
+                      { title: "NA基础", path: "/handbook/NA" }
                     ],
                   }
               ]
