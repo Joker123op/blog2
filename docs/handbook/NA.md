@@ -1,5 +1,7 @@
 ## 网络安全设备
 
+常见的网络安全设备有
+
 ![image-20230715150243211](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/image-20230715150243211.webp)
 
 常见的通信设备厂商：
