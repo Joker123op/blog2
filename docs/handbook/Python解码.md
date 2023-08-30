@@ -132,6 +132,17 @@ while True:
         print('\n\n输入字符过长无法处理.......')
 ```
 
+当然上面是一个完整的加解密程序，如果只是像单独完成一个解码工作就不需要这么麻烦甚至可以只在cmd中完成，下面是使用cmd进行解码
+
+```python
+python
+import base64
+string = 'base64字符串'
+code = base64.b64decode(string)
+print(code)
+```
+
+这样在cmd中就会输出对应的解码后的原文
 
 ## RSA加解密原理
 
