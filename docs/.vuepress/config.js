@@ -91,6 +91,14 @@ module.exports = {
                     children: [
                       { title: "NA基础", path: "/handbook/NA" }
                     ],
+                  },
+                  {
+                    title: "没用的东西",
+                    path: "/handbook/数学md使用方法",
+                    collapsable: true,
+                    children: [
+                      { title: "数学公式", path: "/handbook/数学md使用方法" },
+                    ],
                   }
               ]
     }
