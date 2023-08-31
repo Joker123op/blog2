@@ -377,10 +377,8 @@ $$
 ```text
 $$
 f(n) =
-\begin{cases} 
-n/2,  & \text{if }n\text{ is even} \\
+n/2,  & \text{if }n\text{ is even}
 3n+1, & \text{if }n\text{ is odd}
-\end{cases}
 $$
 ```
 
