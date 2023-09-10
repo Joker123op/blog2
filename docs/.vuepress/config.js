@@ -93,6 +93,14 @@ module.exports = {
                     ],
                   },
                   {
+                    title: "操作系统",
+                    path: '/handbook/Linux',
+                    collapsable: true, // 是否折叠
+                    children: [
+                      { title: "Linux命令", path: "/handbook/Linux" }
+                    ],
+                  },
+                  {
                     title: "没用的东西",
                     path: "/handbook/数学md使用方法",
                     collapsable: true,
