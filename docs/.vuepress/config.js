@@ -97,7 +97,9 @@ module.exports = {
                     path: '/handbook/Linux',
                     collapsable: true, // 是否折叠
                     children: [
-                      { title: "Linux命令", path: "/handbook/Linux" }
+                      { title: "Linux命令", path: "/handbook/Linux" },
+                      { title: "Windows命令", path: "/handbook/Windows"},
+                      { title: "Windows应急响应", path: "/handbook/应急响应"}
                     ],
                   },
                   {
