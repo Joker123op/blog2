@@ -676,4 +676,40 @@ $$varname = 20;	// 声明一个age的变量并赋值为20
 echo $age; // 输出20
 ```
 
+##  登录界面
+
+```php
+<?php
+
+@$user = $_POST['user'];
+@$pwd = $_POST['pwd'];
+
+if (!empty($user) && !empty($pwd)){
+    if ($user == 'admin' && $pwd == 'password')
+        echo "<script>alert('登陆成功')</script>";
+    else
+        echo "<script>alert('登陆失败')</script>";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录login</title>
+</head>
+<body>
+    <form action="index.php" method="post" >
+        <input name="user" type="text">
+        <br>
+        <input name="pwd" type="password">
+        <br>
+        <input type="submit" value="登录">
+        <br>
+    </form> 
+</body>
+</html>
+```
+
  
