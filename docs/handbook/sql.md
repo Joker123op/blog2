@@ -127,30 +127,33 @@ url的中文名是**统一资源定位符**他有着自己独特的编码，也�
 
 这里附上一个[sqlmap使用手则](https://www.cnblogs.com/hongfei/p/3872156.html)
 
-## 联合查询
+## 联合注入
 
-`union select`
+联合查询语句是 `union select`
 
-## Burpsuite
+其原理是跟前面的语句拼接例如这样 `select * from admin union select user,password from admin`
 
-这是一款功能非常强大的抓包改包软件。在Windows环境下，如果要使用这个工具。建议使用Java8的Java环境。
+这样才能实现联合查询并且联合查询的前后的字段必须保持一致
 
-如果是Java8以上的环境建议使用最新版的`burpsuite`。否则会出现不兼容无法使用。高版本也有很多好用的功能
 
-比如说：
 
-* 1、高版本中内置了一个浏览器，可以免去安装HTTPS证书
-* 2、并且不再需要手动配置代理
-* 3、功能更多更完善
+## 获取数据库的表名和字段名
 
-建议是使用破解专业版，因为在实际做题的时候如果遇见需要爆破的场景，社区版是不支持开启多线程模式的，而付费版是可以开启多线程模式的。
+通过每一个数据库都会自带的一个  `information_schema` 数据库来查询
 
-这样一来可以大大的提升请求速度，节约时间成本，以至于在爆破一些比较大的数据时会耗时过久
+查询 `information_schema` 数据库下面的  `tables` 、 `conlumns` 两个表来获得
 
-这里附上一个使用多线程的方法
+#### tables表里存储的是当前数据库中所有表的信息
 
-![Img](https://joker-1317382260.cos.ap-guangzhou.myqcloud.com/202304092124888.webp)
+`tables_name`
 
+#### columns表里存储的是当前数据库中的所有字段的信息
+
+`columns_name`
+
+还有一个表 `schema` 表中存储了所有数据库的信息 
+
+`schema_name`
 
 ## limit的作用
 
