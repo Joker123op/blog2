@@ -402,7 +402,30 @@ print(flag.text)
 
 上传的图片可以写绝对路径也可以是相对路径
 
+## 多线程
 
+
+
+```python
+import threading
+
+
+def dasd():
+    for i in range(1, 100):
+        print('dawd' + str(i))
+
+
+def low():
+    for i in range(1, 100):
+        print('low' + str(i))
+
+
+lalal = threading.Thread(target=dasd)
+fw = threading.Thread(target=low)
+
+lalal.start()
+fw.start()
+```
 
 
 
