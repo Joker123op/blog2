@@ -30,6 +30,14 @@ Js的标识：
 <img src=1 onerror=alert(1) /> // 事件方法（触发器：事件在标签里面on开头的东西很高概率是事件）触发条件是src=1，因为这个本身不成立所以执行了后面的语句
 ```
 
+在实战中不建议使用 `alert()` 这个函数进行弹窗，会影响业务正常运行属于风险操作
+
+> 使用以下示例
+
+```html
+<script>console.log(123)</script>
+```
+
 上面三个不仅仅是js的标识还是触发的方法
 
 [JavaScript事件触发手册](https://blog.csdn.net/qq_36354324/article/details/106592588)
@@ -69,7 +77,7 @@ JavaScript还支持一些编码例如：NATIVE
 
 弹窗函数被劫栏会尝试替代`prompt(1)`
 
-`payload:'onfocus=alert(1)autofocus'当input输入框获取焦点时执行(onfocus)`
+`payload:  'onfocus=alert(1)autofocus' 当input输入框获取焦点时执行(onfocus)`
 
 ## Cookie同源策略
 
