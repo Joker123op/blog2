@@ -99,7 +99,8 @@ module.exports = {
                     children: [
                       { title: "Linux命令", path: "/handbook/Linux" },
                       { title: "Windows命令", path: "/handbook/Windows"},
-                      { title: "Windows应急响应", path: "/handbook/应急响应"}
+                      { title: "Windows应急响应", path: "/handbook/win应急响应"},
+                      { title: "Linux安全加固", path: "/handbook/Linux安全加固"}
                     ],
                   },
                   {
