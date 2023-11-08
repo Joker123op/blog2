@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>公式块与行内公式的添加 | Lingのblog</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="Lingのblog">
+    
+    <link rel="preload" href="/blog2/assets/css/0.styles.7bb9d479.css" as="style"><link rel="preload" href="/blog2/assets/js/app.8931c98e.js" as="script"><link rel="preload" href="/blog2/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/blog2/assets/js/32.168463c4.js" as="script"><link rel="prefetch" href="/blog2/assets/js/10.e672280b.js"><link rel="prefetch" href="/blog2/assets/js/11.53245d8e.js"><link rel="prefetch" href="/blog2/assets/js/12.4b6bc521.js"><link rel="prefetch" href="/blog2/assets/js/13.7d8e1033.js"><link rel="prefetch" href="/blog2/assets/js/14.3912c2ba.js"><link rel="prefetch" href="/blog2/assets/js/15.2ddd6420.js"><link rel="prefetch" href="/blog2/assets/js/16.0aca61d2.js"><link rel="prefetch" href="/blog2/assets/js/17.8935c8a6.js"><link rel="prefetch" href="/blog2/assets/js/18.646d87f1.js"><link rel="prefetch" href="/blog2/assets/js/19.5a79c48f.js"><link rel="prefetch" href="/blog2/assets/js/20.8f694d91.js"><link rel="prefetch" href="/blog2/assets/js/21.2f4c0f41.js"><link rel="prefetch" href="/blog2/assets/js/22.903e81b7.js"><link rel="prefetch" href="/blog2/assets/js/23.da420023.js"><link rel="prefetch" href="/blog2/assets/js/24.35860ae7.js"><link rel="prefetch" href="/blog2/assets/js/25.b96aec5e.js"><link rel="prefetch" href="/blog2/assets/js/26.89e33a13.js"><link rel="prefetch" href="/blog2/assets/js/27.5105a30f.js"><link rel="prefetch" href="/blog2/assets/js/28.8f1be9cf.js"><link rel="prefetch" href="/blog2/assets/js/29.cf28a975.js"><link rel="prefetch" href="/blog2/assets/js/3.670ed6d9.js"><link rel="prefetch" href="/blog2/assets/js/30.df8f8f51.js"><link rel="prefetch" href="/blog2/assets/js/31.55e51cab.js"><link rel="prefetch" href="/blog2/assets/js/33.d4bdaa6f.js"><link rel="prefetch" href="/blog2/assets/js/34.369f2cce.js"><link rel="prefetch" href="/blog2/assets/js/35.136b3d92.js"><link rel="prefetch" href="/blog2/assets/js/36.d18daca2.js"><link rel="prefetch" href="/blog2/assets/js/4.d12742be.js"><link rel="prefetch" href="/blog2/assets/js/5.216cae74.js"><link rel="prefetch" href="/blog2/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/blog2/assets/js/7.9c9172a7.js"><link rel="prefetch" href="/blog2/assets/js/8.db2431b1.js"><link rel="prefetch" href="/blog2/assets/js/9.36b766d8.js">
+    <link rel="stylesheet" href="/blog2/assets/css/0.styles.7bb9d479.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog2/" class="home-link router-link-active"><!----> <span class="site-name">Lingのblog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog2/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用在线工具" class="dropdown-title"><span class="title">常用在线工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用在线工具" class="mobile-dropdown-title"><span class="title">常用在线工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.asciim.cn/m/tools/convert_ascii_to_string.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  各进制ASCII码转字符串
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://oktools.net/image2base64" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  图片转base64编码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://xssaq.com/login/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  XSS在线平台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/hexconvert/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  进制转换
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://base64.us/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Base64在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://hi.pcmoe.net/Buddha.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/pyc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  反编译pyc
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LingのGithub" class="dropdown-title"><span class="title">LingのGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="LingのGithub" class="mobile-dropdown-title"><span class="title">LingのGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Joker123op/blog2.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog2/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用在线工具" class="dropdown-title"><span class="title">常用在线工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用在线工具" class="mobile-dropdown-title"><span class="title">常用在线工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.asciim.cn/m/tools/convert_ascii_to_string.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  各进制ASCII码转字符串
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://oktools.net/image2base64" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  图片转base64编码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://xssaq.com/login/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  XSS在线平台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/hexconvert/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  进制转换
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://base64.us/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Base64在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://hi.pcmoe.net/Buddha.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/pyc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  反编译pyc
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LingのGithub" class="dropdown-title"><span class="title">LingのGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="LingのGithub" class="mobile-dropdown-title"><span class="title">LingのGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Joker123op/blog2.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/blog2/" class="sidebar-heading clickable router-link-active"><span>欢迎学习</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog2/" aria-current="page" class="sidebar-link">博客介绍</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Python笔记" class="sidebar-heading clickable"><span>Python3基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/图片隐写" class="sidebar-heading clickable"><span>CTF:wp</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Reverse" class="sidebar-heading clickable"><span>逆向</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Database" class="sidebar-heading clickable"><span>渗透</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/NA" class="sidebar-heading clickable"><span>信息通讯基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Linux" class="sidebar-heading clickable"><span>操作系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/数学md使用方法" class="sidebar-heading clickable open active"><span>没用的东西</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog2/handbook/数学md使用方法.html" class="active sidebar-link">数学公式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#公式块与行内公式的添加" class="sidebar-link">公式块与行内公式的添加</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#常用符号的代码" class="sidebar-link">常用符号的代码</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#矩阵" class="sidebar-link">矩阵</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#公式序号" class="sidebar-link">公式序号</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#行列式" class="sidebar-link">行列式</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#表格" class="sidebar-link">表格</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#多行等式对齐" class="sidebar-link">多行等式对齐</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#方程组、条件表达式" class="sidebar-link">方程组、条件表达式</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#间隔-大小空格、紧贴" class="sidebar-link">间隔 (大小空格、紧贴)</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#通过python生成latex表达式" class="sidebar-link">通过Python生成LaTeX表达式</a></li><li class="sidebar-sub-header"><a href="/blog2/handbook/数学md使用方法.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="公式块与行内公式的添加"><a href="#公式块与行内公式的添加" class="header-anchor">#</a> 公式块与行内公式的添加</h2> <h3 id="_1-公式块"><a href="#_1-公式块" class="header-anchor">#</a> 1.公式块</h3> <ul><li><strong>创建独立的一块公式区域</strong>。</li></ul> <p><img src="https://pic4.zhimg.com/80/v2-173040dc6f514f968238de4eea234103_720w.webp" alt="img"></p> <ul><li>上部分为公式输入区</li> <li>下部分为效果展示区</li></ul> <p><img src="https://pic3.zhimg.com/80/v2-219413f9b93e87886e39da12cea971a6_720w.webp" alt="img"></p> <p>编辑别处时展示效果图。</p> <p><strong>方法一</strong>：左上角点击“段落”，再点击“公式块”</p> <p><strong>方法一</strong>：在文中输入$$，再按下回车</p> <h3 id="_2-行内公式"><a href="#_2-行内公式" class="header-anchor">#</a> 2.行内公式</h3> <ul><li><strong>将公式嵌入文字内</strong>。</li></ul> <p><img src="https://pic1.zhimg.com/80/v2-92380dc1f20d8942e68beba08c742ed8_720w.webp" alt="img"></p> <p><strong>方法一</strong>： 在<code>$$</code>的中间加入需要的公式</p> <p><strong>简便的方法一</strong>：先按 <code>$</code> ，再按 “esc”（键盘左上角）</p> <p><img src="https://pic3.zhimg.com/80/v2-ba58046e522d2a96a8def586f04a3136_720w.webp" alt="img"></p> <p>（行内公式是需要先设置一下）</p> <hr> <h2 id="常用符号的代码"><a href="#常用符号的代码" class="header-anchor">#</a> 常用符号的代码</h2> <ul><li>上下标，正负无穷</li> <li>加减乘，分式，根号，省略号</li> <li>三角函数</li> <li>矢量，累加累乘，极限</li> <li>希腊字母</li></ul> <h3 id="_1-上下标-正负无穷"><a href="#_1-上下标-正负无穷" class="header-anchor">#</a> <strong>1.上下标，正负无穷</strong></h3> <p><img src="https://pic2.zhimg.com/80/v2-9e56df605e51b7aa0cf7a45d0b5bfde1_720w.webp" alt="img"></p> <h3 id="_2-加减乘-分式-根号-省略号"><a href="#_2-加减乘-分式-根号-省略号" class="header-anchor">#</a> <strong>2.加减乘，分式，根号，省略号</strong></h3> <p><img src="https://pic3.zhimg.com/80/v2-417aefe2addf8328b4865d037864ec4e_720w.webp" alt="img"></p> <h3 id="_3-三角函数"><a href="#_3-三角函数" class="header-anchor">#</a> <strong>3.三角函数</strong></h3> <p><img src="https://pic4.zhimg.com/80/v2-2527327da18ba3cd4d9cfa9483bcbe1f_720w.webp" alt="img"></p> <h3 id="_4-矢量-累加累乘-极限"><a href="#_4-矢量-累加累乘-极限" class="header-anchor">#</a> <strong>4.矢量，累加累乘，极限</strong></h3> <p><img src="https://pic1.zhimg.com/80/v2-701158788db26a5936516dc93d34b378_720w.webp" alt="img"></p> <h3 id="_5-希腊字母"><a href="#_5-希腊字母" class="header-anchor">#</a> <strong>5.希腊字母</strong></h3> <p><img src="https://pic3.zhimg.com/80/v2-ec3ad9e52d4b26648d73c64c43bc217e_720w.webp" alt="img"></p> <h3 id="_6-关系运算符"><a href="#_6-关系运算符" class="header-anchor">#</a> <strong>6.关系运算符</strong></h3> <p><img src="https://pic3.zhimg.com/80/v2-9088cec7cffbc94c5daef26147278062_720w.webp" alt="img"></p> <hr> <h2 id="矩阵"><a href="#矩阵" class="header-anchor">#</a> <strong>矩阵</strong></h2> <h3 id="_1-简单矩阵"><a href="#_1-简单矩阵" class="header-anchor">#</a> <strong>1.简单矩阵</strong></h3> <p>使用<code>\begin{matrix}…\end{matrix}</code>生成， 每一行以<code>\\</code>结尾表示换行，元素间以<code>&amp;</code>间隔，式子的表示序号<code>\tag{1}</code>（右边的序号）。
+$$
+\begin{matrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{matrix} \tag{1}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code> $$
+\begin{matrix}
+ 1 &amp;amp; 2 &amp;amp; 3 \\
+ 4 &amp;amp; 5 &amp;amp; 6 \\
+ 7 &amp;amp; 8 &amp;amp; 9 
+\end{matrix} \tag{1}
+$$
+</code></pre></div><h3 id="_2-带左右括号的矩阵-大中小括号"><a href="#_2-带左右括号的矩阵-大中小括号" class="header-anchor">#</a> <strong>2.带左右括号的矩阵(大中小括号)</strong></h3> <p><strong>方法一</strong>：在<code>\begin{}</code>之前和<code>\end{}</code>之后添加左右括号的代码。</p> <p>大括号：
+$$
+\left{
+\begin{matrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right} \tag{2}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \left\{
+ \begin{matrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{matrix}
+  \right\} \tag{2}
+$$
+</code></pre></div><p>中括号：
+$$
+\left[
+\begin{matrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right] \tag{3}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \left[
+ \begin{matrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{matrix}
+  \right] \tag{3}
+$$
+</code></pre></div><p>小括号：
+$$
+\left(
+\begin{matrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right) \tag{4}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \left(
+ \begin{matrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{matrix}
+  \right) \tag{4}
+$$
+</code></pre></div><p><strong>方法二</strong>：改变<code>\begin{matrix}</code>和<code>\end{matrix}</code>中<code>{matrix}</code></p> <p>大括号：
+$$
+\begin{Bmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{Bmatrix} \tag{6}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \begin{Bmatrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{Bmatrix} \tag{6}
+$$
+</code></pre></div><p>中括号：
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{bmatrix} \tag{6}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \begin{bmatrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{bmatrix} \tag{6}
+$$
+</code></pre></div><h3 id="_3-包含希腊字母与省略号"><a href="#_3-包含希腊字母与省略号" class="header-anchor">#</a> <strong>3.包含希腊字母与省略号</strong></h3> <p>行省略号<code>\cdots</code>，列省略号<code>\vdots</code>，斜向省略号（左上至右下）<code>\ddots</code>。
+$$
+\left{
+\begin{matrix}
+1      &amp; 2        &amp; \cdots &amp; 5        \
+6      &amp; 7        &amp; \cdots &amp; 10       \
+\vdots &amp; \vdots   &amp; \ddots &amp; \vdots   \
+\alpha &amp; \alpha+1 &amp; \cdots &amp; \alpha+4
+\end{matrix}
+\right}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \left\{
+ \begin{matrix}
+ 1      &amp;amp; 2        &amp;amp; \cdots &amp;amp; 5        \\
+ 6      &amp;amp; 7        &amp;amp; \cdots &amp;amp; 10       \\
+ \vdots &amp;amp; \vdots   &amp;amp; \ddots &amp;amp; \vdots   \\
+ \alpha &amp;amp; \alpha+1 &amp;amp; \cdots &amp;amp; \alpha+4 
+ \end{matrix}
+ \right\}
+$$
+</code></pre></div><hr> <h2 id="公式序号"><a href="#公式序号" class="header-anchor">#</a> 公式序号</h2> <p>见“矩阵”小节，代码最后的一行即表示右端序号</p> <div class="language-text extra-class"><pre class="language-text"><code>......
+\tag{6}
+</code></pre></div><h2 id="行列式"><a href="#行列式" class="header-anchor">#</a> 行列式</h2> <p>行列式相关语法与矩阵类似
+$$
+\begin{vmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{vmatrix}
+\tag{7}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+ \begin{vmatrix}
+   1 &amp;amp; 2 &amp;amp; 3 \\
+   4 &amp;amp; 5 &amp;amp; 6 \\
+   7 &amp;amp; 8 &amp;amp; 9
+  \end{vmatrix}
+\tag{7}
+$$
+</code></pre></div><hr> <h2 id="表格"><a href="#表格" class="header-anchor">#</a> 表格</h2> <h3 id="_1-简易表格"><a href="#_1-简易表格" class="header-anchor">#</a> <strong>1.简易表格</strong></h3> <p>$$
+\begin{array}{|c|c|c|}
+\hline 2&amp;9&amp;4\
+\hline 7&amp;5&amp;3\
+\hline 6&amp;1&amp;8\
+\hline
+\end{array}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+\begin{array}{|c|c|c|}
+	\hline 2&amp;amp;9&amp;amp;4\\
+	\hline 7&amp;amp;5&amp;amp;3\\
+	\hline 6&amp;amp;1&amp;amp;8\\
+	\hline
+\end{array}
+$$
+</code></pre></div><p><strong>开头结尾</strong>： <code>\begin{array}</code> ， <code>\end{array}</code></p> <p><strong>定义式</strong>：例：<code>{|c|c|c|}</code>，其中<code>c</code> <code>l</code> <code>r</code> 分别代表居中、左对齐及右对齐。</p> <p><strong>分割线</strong>：①<strong>竖直分割线</strong>：在定义式中插入 <code>|</code>， （<code>||</code>表示两条竖直分割线）。</p> <p>②<strong>水平分割线</strong>：在下一行输入前插入 <code>\hline</code>，以下图真值表为例。</p> <p>其他：每行元素间均须要插入 <code>&amp;</code> ，每行元素以 <code>\\</code> 结尾。</p> <h3 id="_2-真值表"><a href="#_2-真值表" class="header-anchor">#</a> <strong>2..真值表</strong></h3> <p>$$
+\begin{array}{cc|c}
+A&amp;B&amp;F\
+\hline 0&amp;0&amp;0\
+0&amp;1&amp;1\
+1&amp;0&amp;1\
+1&amp;1&amp;1\
+\end{array}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+\begin{array}{cc|c}
+	       A&amp;amp;B&amp;amp;F\\
+	\hline 0&amp;amp;0&amp;amp;0\\
+	       0&amp;amp;1&amp;amp;1\\
+	       1&amp;amp;0&amp;amp;1\\
+	       1&amp;amp;1&amp;amp;1\\
+\end{array}
+$$
+</code></pre></div><hr> <h2 id="多行等式对齐"><a href="#多行等式对齐" class="header-anchor">#</a> <strong>多行等式对齐</strong></h2> <p>$$
+\begin{aligned}
+a &amp;= b + c \
+&amp;= d + e + f
+\end{aligned}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+\begin{aligned}
+a &amp;amp;= b + c \\
+  &amp;amp;= d + e + f
+\end{aligned}
+$$
+</code></pre></div><h2 id="方程组、条件表达式"><a href="#方程组、条件表达式" class="header-anchor">#</a> <strong>方程组、条件表达式</strong></h2> <p>方程组：
+$$
+\begin{cases}
+3x + 5y +  z \
+7x - 2y + 4z \
+-6x + 3y + 2z
+\end{cases}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+\begin{cases}
+3x + 5y +  z \\
+7x - 2y + 4z \\
+-6x + 3y + 2z
+\end{cases}
+$$
+</code></pre></div><p>同理，条件表达式：
+$$
+f(n) =
+\begin{cases}
+n/2,  &amp; \text{if }n\text{ is even} \
+3n+1, &amp; \text{if }n\text{ is odd}
+\end{cases}
+$$</p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+f(n) =
+n/2,  &amp;amp; \text{if }n\text{ is even}
+3n+1, &amp;amp; \text{if }n\text{ is odd}
+$$
+</code></pre></div><hr> <h2 id="间隔-大小空格、紧贴"><a href="#间隔-大小空格、紧贴" class="header-anchor">#</a> <strong>间隔 (大小空格、紧贴)</strong></h2> <p><strong>紧贴 + 无空格 + 小空格 + 中空格 + 大空格 + 真空格 + 双真空格</strong></p> <div class="language-text extra-class"><pre class="language-text"><code>$$
+a\!b + ab + a\,b + a\;b + a\ b + a\quad b + a\qquad b
+$$
+</code></pre></div><p>紧贴<code>\!</code></p> <p>无空格 小空格<code>\,</code> 中空格<code>\;</code> 大空格<code>\</code></p> <p>真空格<code>\quad</code> 双真空格<code>\qquad</code></p> <hr> <h2 id="通过python生成latex表达式"><a href="#通过python生成latex表达式" class="header-anchor">#</a> 通过Python生成LaTeX表达式</h2> <h3 id="step1-安装latexify-py模块"><a href="#step1-安装latexify-py模块" class="header-anchor">#</a> <strong>step1：安装latexify-py模块</strong></h3> <h3 id="step2-编写代码"><a href="#step2-编写代码" class="header-anchor">#</a> <strong>step2：编写代码</strong></h3> <div class="language-python3 extra-class"><pre class="language-text"><code>import math				//引入数学模块(有些运算的函数需要)
+import latexify			//引入latexify模块
+
+@latexify.with_latex	//特定语法，表示之后定义的函数可以转化为LaTeX代码
+def f(x,y,z):		    //包含的参数
+    pass			   //此处填写可能需要的数学表达式
+    return result		//也可以直接体现数学关系
+
+print(f)			   //直接print(函数名)
+</code></pre></div><h3 id="step3-在输出区得到需要的latex数学表达式"><a href="#step3-在输出区得到需要的latex数学表达式" class="header-anchor">#</a> <strong>step3：在输出区得到需要的LaTeX数学表达式</strong></h3> <p><strong>特别说明</strong>，生成的表达式为<strong>定义式</strong>，即 ，如果只需要等式 ，可以把生成表达式中的<code>\triangleq</code>改成<code>=</code> ！</p> <p>更多细节和实例可以浏览我新的文章：</p> <p><a href="https://zhuanlan.zhihu.com/p/270596333" target="_blank" rel="noopener noreferrer">使用Python一键生成LaTeX数学公式70 赞同 · 9 评论文章<img src="https://picx.zhimg.com/v2-b0d50fd5f6bb3327dae0b1f73a305ae0_r.jpg?source=172ae18b" alt="img"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <hr> <p>ps：好像知乎不支持markdown表格，离谱了。</p> <p>在原理上，Typora中使用Markdown语法进行操作，在Markdown中添加公式只需要知道LaTex语法，再在前后加入$（或$$）</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li>使用Typora添加数学公式（<a href="https://link.zhihu.com/?target=https%3A//blog.csdn.net/mingzhuo_126/article/details/82722455" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/mingzhuo_126/article/details/82722455<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li> <li>[CSDN_Markdown] 使用LaTeX写矩阵（<a href="https://link.zhihu.com/?target=https%3A//blog.csdn.net/bendanban/article/details/44221279" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/bendanban/article/details/44221279<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li> <li>Markdown下的LaTeX公式笔记 （<a href="https://link.zhihu.com/?target=https%3A//www.bilibili.com/read/cv1578688/" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/read/cv1578688/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li> <li>typora行内公式插入（https://www.zhihu.com/answer/809450524）</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog2/handbook/Linux安全加固.html" class="prev">
+        Linux安全加固
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog2/assets/js/app.8931c98e.js" defer></script><script src="/blog2/assets/js/2.733019b2.js" defer></script><script src="/blog2/assets/js/32.168463c4.js" defer></script>
+  </body>
+</html>

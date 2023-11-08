@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>入侵排查思路 | Lingのblog</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="Lingのblog">
+    
+    <link rel="preload" href="/blog2/assets/css/0.styles.7bb9d479.css" as="style"><link rel="preload" href="/blog2/assets/js/app.8931c98e.js" as="script"><link rel="preload" href="/blog2/assets/js/2.733019b2.js" as="script"><link rel="preload" href="/blog2/assets/js/12.4b6bc521.js" as="script"><link rel="prefetch" href="/blog2/assets/js/10.e672280b.js"><link rel="prefetch" href="/blog2/assets/js/11.53245d8e.js"><link rel="prefetch" href="/blog2/assets/js/13.7d8e1033.js"><link rel="prefetch" href="/blog2/assets/js/14.3912c2ba.js"><link rel="prefetch" href="/blog2/assets/js/15.2ddd6420.js"><link rel="prefetch" href="/blog2/assets/js/16.0aca61d2.js"><link rel="prefetch" href="/blog2/assets/js/17.8935c8a6.js"><link rel="prefetch" href="/blog2/assets/js/18.646d87f1.js"><link rel="prefetch" href="/blog2/assets/js/19.5a79c48f.js"><link rel="prefetch" href="/blog2/assets/js/20.8f694d91.js"><link rel="prefetch" href="/blog2/assets/js/21.2f4c0f41.js"><link rel="prefetch" href="/blog2/assets/js/22.903e81b7.js"><link rel="prefetch" href="/blog2/assets/js/23.da420023.js"><link rel="prefetch" href="/blog2/assets/js/24.35860ae7.js"><link rel="prefetch" href="/blog2/assets/js/25.b96aec5e.js"><link rel="prefetch" href="/blog2/assets/js/26.89e33a13.js"><link rel="prefetch" href="/blog2/assets/js/27.5105a30f.js"><link rel="prefetch" href="/blog2/assets/js/28.8f1be9cf.js"><link rel="prefetch" href="/blog2/assets/js/29.cf28a975.js"><link rel="prefetch" href="/blog2/assets/js/3.670ed6d9.js"><link rel="prefetch" href="/blog2/assets/js/30.df8f8f51.js"><link rel="prefetch" href="/blog2/assets/js/31.55e51cab.js"><link rel="prefetch" href="/blog2/assets/js/32.168463c4.js"><link rel="prefetch" href="/blog2/assets/js/33.d4bdaa6f.js"><link rel="prefetch" href="/blog2/assets/js/34.369f2cce.js"><link rel="prefetch" href="/blog2/assets/js/35.136b3d92.js"><link rel="prefetch" href="/blog2/assets/js/36.d18daca2.js"><link rel="prefetch" href="/blog2/assets/js/4.d12742be.js"><link rel="prefetch" href="/blog2/assets/js/5.216cae74.js"><link rel="prefetch" href="/blog2/assets/js/6.2d0a63f8.js"><link rel="prefetch" href="/blog2/assets/js/7.9c9172a7.js"><link rel="prefetch" href="/blog2/assets/js/8.db2431b1.js"><link rel="prefetch" href="/blog2/assets/js/9.36b766d8.js">
+    <link rel="stylesheet" href="/blog2/assets/css/0.styles.7bb9d479.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog2/" class="home-link router-link-active"><!----> <span class="site-name">Lingのblog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog2/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用在线工具" class="dropdown-title"><span class="title">常用在线工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用在线工具" class="mobile-dropdown-title"><span class="title">常用在线工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.asciim.cn/m/tools/convert_ascii_to_string.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  各进制ASCII码转字符串
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://oktools.net/image2base64" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  图片转base64编码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://xssaq.com/login/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  XSS在线平台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/hexconvert/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  进制转换
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://base64.us/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Base64在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://hi.pcmoe.net/Buddha.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/pyc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  反编译pyc
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LingのGithub" class="dropdown-title"><span class="title">LingのGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="LingのGithub" class="mobile-dropdown-title"><span class="title">LingのGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Joker123op/blog2.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog2/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="常用在线工具" class="dropdown-title"><span class="title">常用在线工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="常用在线工具" class="mobile-dropdown-title"><span class="title">常用在线工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.asciim.cn/m/tools/convert_ascii_to_string.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  各进制ASCII码转字符串
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://oktools.net/image2base64" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  图片转base64编码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://xssaq.com/login/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  XSS在线平台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/hexconvert/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  进制转换
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://base64.us/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Base64在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.somd5.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MD5在线解密
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://hi.pcmoe.net/Buddha.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新佛曰
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tool.lu/pyc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  反编译pyc
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="LingのGithub" class="dropdown-title"><span class="title">LingのGithub</span> <span class="arrow down"></span></button> <button type="button" aria-label="LingのGithub" class="mobile-dropdown-title"><span class="title">LingのGithub</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/Joker123op/blog2.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/blog2/" class="sidebar-heading clickable router-link-active open"><span>欢迎学习</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog2/" aria-current="page" class="sidebar-link">博客介绍</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Python笔记" class="sidebar-heading clickable"><span>Python3基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/图片隐写" class="sidebar-heading clickable"><span>CTF:wp</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Reverse" class="sidebar-heading clickable"><span>逆向</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Database" class="sidebar-heading clickable"><span>渗透</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/NA" class="sidebar-heading clickable"><span>信息通讯基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/Linux" class="sidebar-heading clickable"><span>操作系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog2/handbook/数学md使用方法" class="sidebar-heading clickable"><span>没用的东西</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="入侵排查思路"><a href="#入侵排查思路" class="header-anchor">#</a> 入侵排查思路</h2> <blockquote><p>账号安全 -&gt; 历史命令 -&gt; 检查异常端口 -&gt; 检查异常进程 -&gt; 检查开机启动项 -&gt; 检查定时任务 -&gt; 检查服务 -&gt; 检查异常文件 -&gt; 检查系统日志</p></blockquote> <h2 id="账号安全"><a href="#账号安全" class="header-anchor">#</a> 账号安全</h2> <div class="language- extra-class"><pre class="language-text"><code>1、查询特权用户特权用户(uid 为0)
+[root@localhost ~]# awk -F: '$3==0{print $1}' /etc/passwd
+2、查询可以远程登录的帐号信息
+可以远程登陆相当于是有密码的用户
+[root@localhost ~]# awk '/\$1|\$6/{print $1}' /etc/shadow
+3、除root帐号外，其他帐号是否存在sudo权限。如非管理需要，普通帐号应删除sudo权限
+[root@localhost ~]# more /etc/sudoers | grep -v &quot;^#\|^$&quot; | grep &quot;ALL=(ALL)&quot;
+more :单页输出
+cat：一次性全部输出
+4、禁用或删除多余及可疑的帐号
+usermod -L user 禁用帐号，帐号无法登录，/etc/shadow第二栏为!开头
+passwd -l
+userdel user 删除user用户
+userdel -r user 将删除user用户，并且将/home目录下的user目录一并删除
+</code></pre></div><h2 id="历史命令"><a href="#历史命令" class="header-anchor">#</a> 历史命令</h2> <div class="language- extra-class"><pre class="language-text"><code>history //查看历史命令
+history -c //清除历史命令
+ls -a //查看隐藏文件
+
+通过.bash_history查看帐号执行过的系统命令
+
+1、root的历史命令
+histroy
+
+2、打开/home各帐号目录下的.bash_history，查看普通帐号的历史命令
+为历史的命令增加登录的IP地址、执行命令时间等信息：
+
+1）保存1万条命令
+sed -i 's/^HISTSIZE=1000/HISTSIZE=10000/g' /etc/profile
+
+2）在/etc/profile的文件尾部添加如下行数配置信息：
+######jiagu history xianshi#########
+USER_IP=`who -u am i 2&gt;/dev/null | awk '{print $NF}' | sed -e 's/[()]//g'`
+if [ &quot;$USER_IP&quot; = &quot;&quot; ]
+then
+USER_IP=`hostname`
+fi
+export HISTTIMEFORMAT=&quot;%F %T $USER_IP `whoami` &quot;
+shopt -s histappend
+export PROMPT_COMMAND=&quot;history -a&quot;
+######### jiagu history xianshi ##########
+
+3）source /etc/profile让配置生效
+生成效果： 1 2018-07-10 19:45:39 192.168.204.1 root source /etc/profile
+
+3、历史操作命令的清除：history -c
+但此命令并不会清除保存在文件中的记录，因此需要手动删除.bash_profile
+文件中的记录。
+入侵排查：
+进入用户目录下
+cat .bash_history &gt;&gt; history.txt
+</code></pre></div><h2 id="检查异常端口"><a href="#检查异常端口" class="header-anchor">#</a> 检查异常端口</h2> <div class="language- extra-class"><pre class="language-text"><code>使用netstat 网络连接命令，分析可疑端口、IP、PID
+netstat -antlp|more
+a:all（表示所有监听的端口）
+n:直接使用IP
+t:tcp协议
+u:udp协议
+l:listen监听
+p:进程
+查看下pid所对应的进程文件路径，
+运行ls -l /proc/$PID/exe或file /proc/$PID/exe（$PID 为对应的pid 号）
+</code></pre></div><h2 id="检查异常进程"><a href="#检查异常进程" class="header-anchor">#</a> 检查异常进程</h2> <div class="language- extra-class"><pre class="language-text"><code>使用ps命令，分析进程
+ps aux | grep pid
+VSZ：虚拟内存的占用大小
+RSS：实际内存的占用大小
+TTY：终端类型（tty：控制终端，pts：虚拟终端）
+STAT：进程状态
+R：正在运行或可运行的进程
++：在前台进程组
+S：休眠中
+s：一个信息头
+&lt;：高优先级
+N：低优先级
+l:多线程
+START：进程的启动时间
+TIME：进程的运行时长
+COMMAND：启动进程的命令
+</code></pre></div><h2 id="检查开机启动项"><a href="#检查开机启动项" class="header-anchor">#</a> 检查开机启动项</h2> <div class="language- extra-class"><pre class="language-text"><code>systemctl enable 服务名 //自启动服务
+
+开机自启动的脚本：
+#!/bin/bash
+#chkconfig:2345 10 90
+#description:ziqi.sh
+echo 123
+
+2345：默认的启动级别
+查看运行级别命令runlevel
+运行级别 含义
+0 关机
+1 单用户模式，可以想象为windows的安全模式，主要用于系统修复
+2 不完全的命令行模式，不含NFS服务（无网络连接的多用户命令行模式）
+3 完全的命令行模式，就是标准字符界面（有网络连接的多用户命令行模式）
+4 系统保留
+5 图形模式
+6 重启动
+10：启动优先级
+90：停止优先级
+优先级范围：0-100，数字越大，优先级越低
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>设置开机自启动，只需将可执行脚本丢在/etc/init.d目录下，然后在
+/etc/rc.d/rc*.d中建立软链接即可
+[root@localhost ~]# ln -s /etc/init.d/sshd /etc/rc.d/rc3.d/S100ssh
+此处sshd是具体服务的脚本文件，S100ssh是其软链接，S开头代表加载时自启动；如果是K开头的脚本文
+件，代表运行级别加载时需要关闭的。
+chkconfig --add ziqi.sh //将脚本添加到自启动列表
+chkconfig --list //查看自启动列表
+chkconfig ziqi.sh on //启动脚本
+</code></pre></div><table><thead><tr><th></th> <th style="text-align:left;">硬链接</th> <th style="text-align:left;">软链接（符号链接l）</th></tr></thead> <tbody><tr><td></td> <td style="text-align:left;">类似完整克隆，但不 完全是</td> <td style="text-align:left;">类似链接克隆，但不完全是</td></tr> <tr><td>创建方式</td> <td style="text-align:left;">ln [原文件] [目标链接 文件]</td> <td style="text-align:left;">ln -s [原文件] [目标链接文件]</td></tr> <tr><td>原文件被删除</td> <td style="text-align:left;">若有执行权限，可以 执行文件</td> <td style="text-align:left;">随之损坏，不能执行</td></tr> <tr><td>更改原文件权限</td> <td style="text-align:left;">权限随之更改</td> <td style="text-align:left;">权限不会更改，但若原文件没有执行权 限，也无法执行</td></tr> <tr><td>新建一个与被删原文件同 名的文件</td> <td style="text-align:left;">执行结果是被删原文 件的内容</td> <td style="text-align:left;">执行结果是新建文件的内容</td></tr></tbody></table> <h2 id="检查定时任务"><a href="#检查定时任务" class="header-anchor">#</a> 检查定时任务</h2> <div class="language- extra-class"><pre class="language-text"><code>入侵排查：
+重点关注以下目录中是否存在恶意脚本
+/var/spool/cron/*
+/etc/crontab
+/etc/cron.d/*
+/etc/cron.daily/*
+/etc/cron.hourly/*
+/etc/cron.monthly/*
+/etc/cron.weekly/
+/etc/anacrontab
+/var/spool/anacron/*
+</code></pre></div><h2 id="检查服务"><a href="#检查服务" class="header-anchor">#</a> 检查服务</h2> <div class="language- extra-class"><pre class="language-text"><code>systemctl list-units --type=service //查看系统正在运行的服务
+systemctl list-units --all --type=service //查看系统中所有的服务
+</code></pre></div><h2 id="检查异常文件"><a href="#检查异常文件" class="header-anchor">#</a> 检查异常文件</h2> <div class="language- extra-class"><pre class="language-text"><code>1、查看敏感目录，如/tmp目录下的文件，同时注意隐藏文件夹，以“..”为名
+的文件夹具有隐藏属性
+
+2、得到发现WEBSHELL、远控木马的创建时间，如何找出同一时间范围内
+创建的文件？
+可以使用find命令来查找，如 find /opt -iname &quot;*&quot; -atime 1 -type f 找出 /opt 下一天前访问
+过的文件
+-atime 1：一天之内
+-type f：type类型为file，普通文件
+
+3、针对可疑文件可以使用stat进行创建修改时间。
+[root@os43 ~]# stat 1.txt
+Access: //访问时间（如cat查看文件内容）
+Modify: //修改文件内容的时间
+Change: //改变状态的时间（包括内容的修改、权限的修改等）
+</code></pre></div><h2 id="检查系统日志"><a href="#检查系统日志" class="header-anchor">#</a> 检查系统日志</h2> <div class="language- extra-class"><pre class="language-text"><code>日志默认存放位置：/var/log/
+查看日志配置情况：more /etc/rsyslog.conf
+日志文件 描述
+/var/log/cron 记录了系统定时任务相关的日志
+/var/log/cups 记录打印信息的日志
+/var/log/dmesg 记录了系统在开机时内核自检的信息，也可以使用dmesg命令直接查看内核自检信息
+/var/log/mailog 记录邮件信息
+★/var/log/message 记录系统重要信息的日志。这个日志文件中会记录Linux系统的绝大多数重要信息，
+如果系统出现问题时，首先要检查的就应该是这个日志文件
+/var/log/btmp 记录错误登录日志，这个文件是二进制文件，不能直接vi查看，而要使用lastb命令查看
+/var/log/lastlog 记录系统中所有用户最后一次登录时间的日志，这个文件是二进制文件，不能直接vi，
+而要使用lastlog命令查看日志文件 描述
+/var/log/wtmp 永久记录所有用户的登录、注销信息，同时记录系统的启动、重启、关机事件。同样这个文
+件也是一个二进制文件，不能直接vi，而需要使用last命令来查看
+/var/log/utmp 记录当前已经登录的用户信息，这个文件会随着用户的登录和注销不断变化，只记录当前登
+录用户的信息。同样这个文件不能直接vi，而要使用w,who,users等命令来查询
+★/var/log/secure 记录验证和授权方面的信息，只要涉及账号和密码的程序都会记录，比如SSH登录，su
+切换用户，sudo授权，甚至添加用户和修改用户密码都会记录在这个日志文件中
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>日志分析技巧：
+
+1、定位有多少IP在爆破主机的root帐号：
+grep &quot;Failed password for root&quot; /var/log/secure | awk '{print $11}' | sort |
+uniq-c | sort -nr | more
+
+2、定位有哪些IP在爆破：
+grep &quot;Failed password&quot; /var/log/secure|grep -E -o &quot;(25[0-5]|2[0-4][0-
+9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-
+9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)&quot;|uniq -c
+
+3、爆破用户名字典是什么？
+grep &quot;Failed password&quot; /var/log/secure|perl -e 'while($_=&lt;&gt;){ /for(.*?) from/;
+print &quot;$1\n&quot;;}'|uniq -c|sort -nr
+
+4、登录成功的IP有哪些：
+grep &quot;Accepted &quot; /var/log/secure | awk '{print $11}' | sort | uniq -c | sort -nr
+| more
+sort：对文本文件中所有行进行排序
+sort -nr：统计出现的次数
+uniq -c：在每行开头的时候增加重复的次数
+
+cat /var/log/secure | grep &quot;Accepted&quot;
+
+5、登录成功的日期、用户名、IP：
+grep &quot;Accepted &quot; /var/log/secure | awk '{print $1,$2,$3,$9,$11}'
+
+6、增加用户日志：
+grep &quot;useradd&quot; /var/log/secure
+
+7、删除用户日志：
+grep &quot;userdel&quot; /var/log/secure
+
+8、su切换用户
+more /var/log/secure | grep 'su:'
+</code></pre></div><h2 id="工具使用"><a href="#工具使用" class="header-anchor">#</a> 工具使用</h2> <div class="language- extra-class"><pre class="language-text"><code>1、chkrootkit
+网址：http://www.chkrootkit.org
+使用方法：
+wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
+tar -zxf chkrootkit.tar.gz
+cd chkrootkit-0.55
+./chkrootkit
+
+2、rkhunter
+网址：http://rkhunter.sourceforge.net/
+使用方法：
+wget https://sourceforge.net/projects/rkhunter/files/rkhunter/1.4.6/rkhunter1.4.6.tar.gz
+tar -zxf rkhunter-1.4.6.tar.gz
+cd rkhunter-1.4.6/
+./installer.sh -install
+rkhunter -c
+
+病毒查杀
+Clamav
+ClamAV的官方下载地址为：http://www.clamav.net/download.html
+使用方法：
+yum -y install epel-release
+yum install –y clamav clamav-update
+freshclam
+clamscan -r /home
+
+webshell查杀
+河马webshell查杀
+网址：https://www.shellpub.com/
+使用方法：
+https://www.shellpub.com/doc/hm_linux_usage.html
+深信服Webshell网站后门检测工具
+网址：https://edr.sangfor.com.cn/#/index/home
+</code></pre></div><h2 id="日志审计"><a href="#日志审计" class="header-anchor">#</a> 日志审计</h2> <p>日志存放的位置：/var/log</p> <h2 id="日志功能"><a href="#日志功能" class="header-anchor">#</a> 日志功能</h2> <div class="language- extra-class"><pre class="language-text"><code>用于记录系统、程序运行中发生的各种事件
+通过阅读日志，有助于诊断和解决系统故障
+</code></pre></div><h2 id="日志分类"><a href="#日志分类" class="header-anchor">#</a> 日志分类</h2> <div class="language- extra-class"><pre class="language-text"><code>用户日志：添加、删除用户，改变用户状态
+程序日志：程序自带的日志，如httpd(访问日志、错误日志)
+内核及系统日志：由系统rsyslog统一管理的，日志格式基本相似
+</code></pre></div><h2 id="tail查看日志"><a href="#tail查看日志" class="header-anchor">#</a> tail查看日志</h2> <div class="language- extra-class"><pre class="language-text"><code>cat、more:从头输出
+tail:从文件末尾开始输出，默认输出最后十行
+
+tail -f file.log
+# 输出文件末尾行（默认10行），当文件有追加时，会输出后续添加的行，不中断输出，除非ctrl+c中断
+# -f 即 –follow=file.log
+-f:持续输出
+
+tail -f file.log | grep “关键字”
+# 输出文件末尾包含关键字的行，当文件有追加时，会输出后续添加的行，不中断输出，除非ctrl+c中断
+# -f 即 –follow=file.log
+
+tail -n 100 file.log | grep “关键字”
+# 输出文件的后100行中包含的关键字的行（-n 100 即 –lines=100）
+-n：指定输出的行数
+
+tail -n 100 file.log | grep “关键字” -A10
+# 输出文件的后100行中包含关键字的行和该行的后10行
+
+tail -n 100 file.log | grep “关键字” -B10
+# 输出文件的后100行中包含关键字的行和该行的前10行
+
+tail -n 100 file.log | grep “关键字” –B10-A10
+# 输出文件的后100行中包含关键字的行和该行的前后10行
+</code></pre></div><h2 id="主要的日志文件"><a href="#主要的日志文件" class="header-anchor">#</a> 主要的日志文件</h2> <div class="language- extra-class"><pre class="language-text"><code>内核及公共消息日志/var/log/messages
+• /var/log/cron 计划任务日志
+• /var/log/dmesg 系统引导日志
+• /var/log/maillog 邮件系统日志
+
+用户登录日志：
+•/var/log/lastlog
+• /var/log/secure
+• /var/log/wtmp
+• /var/log/btmp
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[root@Fricky /]# vim /etc/rsyslog.conf
+-- 进入系统内核日志文件
+authpriv.*
+[服务名称].[日志级别]
+authpriv：登录认证相关的服务
+*:表示所有
+数字等级越小，优先级越高，消息越重要
+日志消息的级别
+0 EMERG（紧急）：会导致主机系统不可用的情况
+1 ALERT（警告）：必须马上采取措施解决问题
+2 CRIT（严重）：比较严重的情况
+3 ERR（错误）：运行出现错误
+4 WARNING （提醒）：可能会影响系统功能的事件
+5 INFO（信息）：一般信息
+6 DEBUG（调试）：程序或系统调试信息等
+触发某级别日志：logger -p emerg &quot;你表达的内容&quot;
+</code></pre></div><h2 id="用户日志分析"><a href="#用户日志分析" class="header-anchor">#</a> 用户日志分析</h2> <div class="language- extra-class"><pre class="language-text"><code>/var/log/lastlog：最近的用户登录事件
+/var/log/wtmp:用户登录、注销及系统开、关机事件
+/var/log/utmp：当前登录的每个用户的详细信息
+/var/log/secure：与用户验证相关的安全性事件
+</code></pre></div><h4 id="分析工具"><a href="#分析工具" class="header-anchor">#</a> 分析工具</h4> <div class="language- extra-class"><pre class="language-text"><code>1.users 查看能登录的用户---/var/log/utmp
+2.who,w 查看在线登录的用户---/var/log/wtmp
+3.last,lastb 查看登录成功和失败的用户---/var/log/lastlog
+lastb：查看登录失败的日志
+last：查看登录成功的日志
+</code></pre></div><h2 id="程序日志分析"><a href="#程序日志分析" class="header-anchor">#</a> 程序日志分析</h2> <div class="language- extra-class"><pre class="language-text"><code>yum -y install httpd
+网站根目录：/var/www/html/
+日志存放位置：/var/log/httpd
+</code></pre></div><h2 id="日志文件"><a href="#日志文件" class="header-anchor">#</a> 日志文件</h2> <div class="language- extra-class"><pre class="language-text"><code>/var/log/boot.log -&gt; 包含系统启动时的日志
+/var/log/utmp -&gt; 包含登录退出信息
+/var/log/secure -&gt; 包含验证和授权信息
+/var/log/dpkg.log -&gt; 包含安装或dpkg命令清除软件包的日志
+/var/log/kern.log -&gt; 包含内核产生的日志，有助于在定制内核时解决问题
+/var/log/Xorg.x.log -&gt; 来自X的日志信息
+/var/log/alternatives.log -&gt; 更新替代信息都记录在这个文件中
+/var/log/cups -&gt; 涉及所有打印信息的日志
+/var/log/anaconda.log -&gt; 在安装Linux时，所有安装信息都储存在这个文件中
+/var/log/yum.log -&gt; 包含使用yum安装的软件包信息
+/var/log/cron -&gt; 每当cron进程进行一个工作，就会将相关信息记录在此文件中
+</code></pre></div><h2 id="日志服务器搭建"><a href="#日志服务器搭建" class="header-anchor">#</a> 日志服务器搭建</h2> <blockquote><p>服务端：接收客户端的日志，保存备份</p> <p>客户端：外发本台设备的日志</p> <p>前提：保证两台设备能通信，确认防火墙和selinx关闭</p></blockquote> <h4 id="客户端"><a href="#客户端" class="header-anchor">#</a> 客户端</h4> <div class="language- extra-class"><pre class="language-text"><code>vim /etc/rsyslog.conf
+
+*.* @@remote-host:514 //格式
+服务.级别 @@远端主机（服务端ip）：514
+@@ tcp
+@ udp
+
+配置内容如下：
+authpriv.* @@192.168.10.100:514
+
+systemctl restart rsyslog.service //重启服务
+</code></pre></div><h4 id="服务端"><a href="#服务端" class="header-anchor">#</a> 服务端</h4> <div class="language- extra-class"><pre class="language-text"><code>vim /etc/rsyslog.conf
+
+# Provides TCP syslog reception
+$ModLoad imtcp
+$InputTCPServerRun 514
+
+:fromhost-ip,isequal,&quot;192.168.10.200&quot;/var/log/client/192.168.10.200.log
+
+:从哪个ip去接收，包含哪些信息，&quot;客户端IP&quot;保存的位置/保存的日志文件名称（192.168.10.200.log）
+
+systemctl restart rsyslog.service //重启服务
+</code></pre></div><h4 id="排错"><a href="#排错" class="header-anchor">#</a> 排错</h4> <blockquote><p>①确认两台设备是否能通信</p> <p>②防火墙确认是否关闭</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog2/assets/js/app.8931c98e.js" defer></script><script src="/blog2/assets/js/2.733019b2.js" defer></script><script src="/blog2/assets/js/12.4b6bc521.js" defer></script>
+  </body>
+</html>
